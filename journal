@@ -1,0 +1,126 @@
+#!/bin/bash
+
+# Get the directory where this script is located
+script_dir=$(dirname "$0")
+
+# Define a function to slugify a title
+slugify_title() {
+  echo "$1" | tr "[:upper:]" "[:lower:]" | sed -e "s/ /-/g" -e "s/[^a-zA-Z0-9-]//g"
+}
+
+# Define a function to create a draft post
+create_draft() {
+  title="$1"
+
+  # Slugify the title
+  slugified_title=$(slugify_title "$title")
+
+  # Create the filename with the name scheme `YYYY-MM-DD-slugified-title`
+  filename="${slugified_title}.md"
+
+  # Check if _drafts directory exists within the script's directory, create it if it doesn’t
+  if [ ! -d "$script_dir/_drafts" ]; then
+    mkdir "$script_dir/_drafts"
+  fi
+
+  # Create the markdown file in the `_drafts` directory inside the script's directory
+  cat << EOF > "$script_dir/_drafts/$filename"
+---
+layout: post
+title: "$title"
+categories:
+---
+EOF
+
+  echo "Draft created: $script_dir/_drafts/$filename"
+}
+
+publish_post() {
+  path="$1"
+  date_arg="$2"
+
+  # Check if the path exists
+  if [ ! -f "$path" ]; then
+    echo "File not found: $path"
+    exit 1
+  fi
+
+  # Get the filename from the path
+  filename=$(basename "$path")
+
+  # If a date argument is provided, use it; otherwise, get the current date
+  if [ -n "$date_arg" ]; then
+    date="$date_arg"
+  else
+    date=$(date +%Y-%m-%d)
+  fi
+
+  # Create the filename with the name scheme `YYYY-MM-DD-slugified-title`
+  new_filename="${date}-${filename}"
+
+  # Check if _posts directory exists within the script's directory, create it if it doesn’t
+  if [ ! -d "$script_dir/_posts" ]; then
+    mkdir "$script_dir/_posts"
+  fi
+
+  # Move the file to the `_posts` directory inside the script's directory
+  mv "$path" "$script_dir/_posts/$new_filename"
+
+  echo "Post published: $script_dir/_posts/$new_filename"
+}
+
+# Define a function to print the usage of the script
+print_usage() {
+  echo "Usage: $0 <command> [options]"
+  echo
+  echo "  install                 # Installs the dependencies"
+  echo "  start                   # Starts the Jekyll server"
+  echo "  draft <title>           # e.g. draft \"My Post Title\""
+  echo "                          # creates _drafts/my-post-title.md"
+  echo "  publish <path> [date]   # e.g. publish _drafts/my-post-title.md"
+  echo "                          # moves _drafts/my-post-title.md to _posts/$(date +%Y-%m-%d)-my-post-title.md"
+}
+
+# Check for the presence of the command argument
+if [ $# -eq 0 ]; then
+  print_usage
+  exit 1
+fi
+
+command="$1"
+
+# Process commands
+case "$command" in
+  draft)
+    # Check for the presence of the title argument for the draft command
+    if [ $# -ne 2 ]; then
+      echo "Usage: $0 draft <title>"
+      exit 1
+    fi
+    title="$2"
+    create_draft "$title"
+    ;;
+  publish)
+    # The path argument is always required for the publish command
+    if [ $# -lt 2 ]; then
+      echo "Usage: $0 publish <path> [date]"
+      exit 1
+    fi
+    path="$2"
+    date_arg="${3:-}"
+    publish_post "$path" "$date_arg"
+    ;;
+  install)
+    # For the install command, no extra arguments are expected
+    bundle install
+    ;;
+  start)
+    # For the start command, no extra arguments are expected
+    bundle exec jekyll serve --drafts --livereload --strict_front_matter
+    ;;
+  *)
+    echo "Unknown command: $command"
+    print_usage
+    exit 1
+    ;;
+esac
