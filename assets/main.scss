@@ -77,6 +77,11 @@ a, a:visited, a:hover {
   display: none;
 }
 
+// Justify post text
+.post-content p {
+  text-align: justify;
+}
+
 // Hide the social media list in the footer
 footer .social-media-list {
   display: none;
