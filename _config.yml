@@ -37,6 +37,10 @@ minima:
 # Permalinks
 permalink: /:title/
 
+# Reading time configuration
+reading_time:
+  words_per_minute: 180 # Average words per minute reading, default to 180
+
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 #header_pages:
