@@ -1,0 +1,8 @@
+<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+  {{ include.post_date | date: date_format }}
+</time>
+&middot;
+<span>{{ include.post_content | reading_time }}</span>
+&middot;
+<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ include.post_author | strip | default: site.author }}</span></span>
