@@ -24,11 +24,6 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  @include media-query($on-palm) {
-    zoom: 0.85; /* Scale down on small devices */
-    -moz-transform: scale(0.85);
-    -moz-transform-origin: 0 0;
-  }
   text-rendering: optimizeLegibility;
   color: $text-color;
   background-color: $background-color;
