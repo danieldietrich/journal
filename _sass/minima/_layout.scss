@@ -204,6 +204,10 @@
   > li {
     margin-bottom: $spacing-unit;
   }
+
+  p {
+    font-family: $post-font-family;
+  }
 }
 
 .post-meta {
