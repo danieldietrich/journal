@@ -1,14 +1,4 @@
 ---
-# Needs front matter to be processed by Jekyll
+# Front matter needed for Jekyll to process this file.
 ---
-
 @import "minima";
-
-// Style links
-header a, a.post-link {
-  text-decoration: none;
-}
-a, a:visited, a:hover {
-  color: #111;
-  text-decoration: underline;
-}
