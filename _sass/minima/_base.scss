@@ -1,3 +1,12 @@
+/* Optional font smoothing - mainly for macOS and iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+
+
 /**
  * Reset some basic elements
  */
@@ -15,6 +24,12 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  @include media-query($on-palm) {
+    zoom: 0.9; /* Scale down on small devices */
+    -moz-transform: scale(0.9);
+    -moz-transform-origin: 0 0;
+  }
+  text-rendering: optimizeLegibility;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -147,19 +162,17 @@ blockquote {
  * Code formatting
  */
 pre,
-code {
-  @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #eef;
-}
-
-code {
-  padding: 1px 5px;
+code,
+kbd,
+samp,
+tt {
+  @include relative-font-size(0.9735);
+  font-family: $code-font-family;
 }
 
 pre {
-  padding: 8px 12px;
+  filter: grayscale(100%);
+  padding: 8px 32px;
   overflow-x: auto;
 
   > code {
