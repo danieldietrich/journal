@@ -7,6 +7,9 @@ description: >- # this means to ignore newlines next property
 baseurl: "" # the subpath of the site, e.g. /blog
 url: "https://danieldietrich.dev"
 
+# Google Analytics (gtag)
+google_analytics: G-377JP30S7M
+
 # Social links
 twitter_username: danieldietrich
 github_username: danieldietrich
