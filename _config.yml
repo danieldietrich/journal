@@ -73,4 +73,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - journal
+  - LICENSE.txt
   - README.md
