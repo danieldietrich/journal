@@ -135,6 +135,9 @@
   color: $grey-color;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
+  a {
+    color: $grey-color;
+  }
 }
 
 .footer-col {
