@@ -207,7 +207,7 @@
 
   p {
     font-family: $post-font-family;
-    height: $base-line-height * $base-font-size * 2; /* height is 2x line-height, so two lines will display */
+    height: $base-line-height * $base-font-size * 2 + 2px; /* height is 2x line-height, so two lines will display */
     text-align: justify;
     text-overflow: ellipsis;
     overflow: hidden; /* prevents extra lines from being visible */
