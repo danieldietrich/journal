@@ -1,13 +1,14 @@
 source "https://rubygems.org"
 
-# This site is built for GitHub Pages.
-# To upgrade, run `bundle update github-pages`.
-gem "github-pages", group: :jekyll_plugins
+# Site is not built in safe mode and allows all plugins to be loaded,
+# it needs to be published to GitHub Pages using GitHub Actions.
+gem "jekyll", "~> 3.9.3"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.15.1"
   gem "jekyll-seo-tag", "~> 2.8.0"
+  gem "kramdown-parser-gfm", "~> 1.1.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
