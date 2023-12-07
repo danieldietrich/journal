@@ -10,16 +10,14 @@ layout: base
     {%- for post in site.posts -%}
       <li>
         <h3>
-          <a class="post-link hover-underline" href="{{ post.url | relative_url }}">
+          <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
           <span class="post-meta">{%- include post-meta.html -%}</span>
         </h3>
         {%- if site.show_excerpts -%}
-          <div class="fade-container">
-            <a class="no-underline" href="{{ post.url | relative_url }}">
-              {{ post.excerpt }}
-            </a>
+          <div class="post-excerpt">
+            {{ post.excerpt }}
           </div>
         {%- endif -%}
       </li>

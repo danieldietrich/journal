@@ -117,6 +117,7 @@
 }
 
 .contact-list,
+.legal-list,
 .social-media-list {
   list-style: none;
   margin-left: 0;
@@ -217,13 +218,13 @@
     overflow: hidden; /* prevents extra lines from being visible */
   }
 
-  .fade-container {
+  .post-excerpt {
     position: relative;
     height: $excerpt-height;
     overflow: hidden;
   }
 
-  .fade-container::after {
+  .post-excerpt::after {
     content: '';
     position: absolute;
     top: 0;
@@ -231,44 +232,17 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 100%);
-    pointer-events: none; /* Allows interaction with the text underneath */
+    pointer-events: auto; /* Disallow interaction with the text underneath */
   }
 }
 
-.category-post-list {
-  margin-left: 0;
-  list-style: none;
-
-  > li {
-    margin-bottom: $spacing-unit;
-  }
-
+.post-list-small {
   p {
-    color: $grey-color-dark;
-    font-family: $post-font-family;
-    // font-size: $small-font-size;
     @include relative-font-size(0.9);
-    height: $excerpt-height-small;
-    text-align: justify;
-    text-overflow: ellipsis;
-    overflow: hidden; /* prevents extra lines from being visible */
   }
 
-  .fade-container {
-    position: relative;
+  .post-excerpt {
     height: $excerpt-height-small;
-    overflow: hidden;
-  }
-
-  .fade-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 100%);
-    pointer-events: none; /* Allows interaction with the text underneath */
   }
 }
 

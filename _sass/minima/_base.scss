@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $text-color;
-  text-decoration: underline;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -123,10 +123,6 @@ a {
   .social-media-list &:hover {
     text-decoration: none;
   }
-}
-
-.hover-underline {
-  text-decoration: none;
 }
 
 .no-underline {
@@ -142,6 +138,17 @@ a {
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.post-content,
+.rss-subscribe {
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

@@ -12,21 +12,19 @@ title: Categories
     </a>
     <div class="category-posts">
       {% for post in site.categories[category_name] %}
-        <ul class="category-post-list">
+        <ul class="post-list post-list-small">
           {%- for post in site.posts -%}
             <li>
               <div>
-                <a class="post-link-small hover-underline" href="{{ post.url | relative_url }}">
+                <a class="post-link-small" href="{{ post.url | relative_url }}">
                   {{ post.title | escape }}
                 </a>
               </div>
               <div class="post-meta">{%- include post-meta.html -%}</div>
               {%- if site.show_excerpts -%}
-                <a class="no-underline" href="{{ post.url | relative_url }}">
-                  <div class="fade-container">
-                    {{ post.excerpt }}
-                  </div>
-                </a>
+                <div class="post-excerpt">
+                  {{ post.excerpt }}
+                </div>
               {%- endif -%}
             </li>
           {%- endfor -%}
