@@ -116,27 +116,33 @@ a {
   color: $text-color;
   text-decoration: underline;
 
-  /*
-  &:visited {
-    color: darken($text-color, 15%);
-  }
-  */
-
   &:hover {
     text-decoration: underline;
   }
 
   .social-media-list &:hover {
     text-decoration: none;
-
-    .username {
-      text-decoration: underline;
-    }
   }
 }
 
-header a, a.post-link {
+.no-underline {
   text-decoration: none;
+}
+
+.anchor {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.post-meta a {
+  color: $grey-color;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 

@@ -1,0 +1,35 @@
+---
+layout: page
+permalink: /categories/
+title: Categories
+---
+
+{% for category in site.categories %}
+  <div class="category-group">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <a class="anchor" name="{{ category_name | slugify }}">
+      <h2 class="category-head">{{ category_name }}</h2>
+    </a>
+    <div class="category-posts">
+      {% for post in site.categories[category_name] %}
+        <ul class="category-post-list">
+          {%- for post in site.posts -%}
+            <li>
+              <div>
+                <a class="post-link-small no-underline" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}
+                </a>
+              </div>
+              <div class="post-meta">{%- include post-meta.html -%}</div>
+              {%- if site.show_excerpts -%}
+                <div class="fade-container">
+                  {{ post.excerpt }}
+                </div>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endfor -%}
+    </div>
+  </div>
+{% endfor %}

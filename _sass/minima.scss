@@ -25,6 +25,7 @@ $table-text-align: left !default;
 
 // Number of lines displayed in the post-list */
 $excerpt-height: $base-line-height * $base-font-size * 3;
+$excerpt-height-small: $base-line-height * $small-font-size * 2;
 
 // Width of the content area
 $content-width:    800px !default;

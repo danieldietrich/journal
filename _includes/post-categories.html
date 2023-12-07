@@ -1,0 +1,12 @@
+{%- if post -%}
+  {%- assign categories = post.categories -%}
+{%- else -%}
+  {%- assign categories = page.categories -%}
+{%- endif -%}
+{%- if categories.size > 0 -%}
+  {%- for category in categories -%}
+    {%- if forloop.first -%}{%- endif -%}
+    <a href="{{ site.baseurl }}/categories#{{ category | slugify }}">{{ category }}</a>
+    {%- if forloop.last -%}{%- else -%}, {% endif %}
+  {%- endfor -%}
+{%- endif -%}
