@@ -7,22 +7,24 @@ title: Categories
 {% for category in site.categories %}
   <div class="category-group">
     {% capture category_name %}{{ category | first }}{% endcapture %}
-    <a class="no-underline" name="{{ category_name | slugify }}">
-      <h2 class="category-head">{{ category_name }}</h2>
-    </a>
+      <h2 class="category-head">
+        <a class="no-underline" name="{{ category_name | slugify }}">
+          {{ category_name }}
+        </a>
+      </h2>
     <div class="category-posts">
       {% for post in site.categories[category_name] %}
         <ul class="post-list post-list-small">
           {%- for post in site.posts -%}
             <li>
-              <div>
+              <h3 class="no-margin">
                 <a class="post-link-small" href="{{ post.url | relative_url }}">
                   {{ post.title | escape }}
                 </a>
-              </div>
-              <div class="small">
-                {%- include post-meta.html -%}
-              </div>
+                <div class="small">
+                  {%- include post-meta.html -%}
+                </div>
+              </h3>
               {%- if site.show_excerpts -%}
                 <div class="post-excerpt">
                   {{ post.excerpt }}

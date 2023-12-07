@@ -29,12 +29,14 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p class="post-content">
-          &OpenCurlyDoubleQuote;{{- site.description | escape -}}&CloseCurlyDoubleQuote;
+        <p>Subscribe via&nbsp;
+          <a href="{{ "/feed.xml" | relative_url }}">
+            <svg class="svg-icon">
+              <use xlink:href="{{ '/assets/img/minima-social-icons.svg#rss' | relative_url }}"></use>
+            </svg>RSS
+          </a>
         </p>
       </div>
     </div>
-
   </div>
-
 </footer>

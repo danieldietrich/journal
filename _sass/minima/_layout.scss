@@ -2,6 +2,7 @@
  * Site header
  */
 .site-header {
+  font-family: $headline-font-family;
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
@@ -12,7 +13,7 @@
 
 .site-title {
   @include relative-font-size(1.625);
-  font-family: $site-title-font-family;
+  font-family: $title-font-family;
   font-weight: 300;
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
@@ -107,6 +108,7 @@
  * Site footer
  */
 .site-footer {
+  font-family: $headline-font-family;
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
 }
@@ -153,28 +155,15 @@
 }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(30% - (#{$spacing-unit} / 2));
+  width:         calc(30% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
+  text-align: right;
 }
-/*
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-*/
 
 @include media-query($on-palm) {
   .footer-col {
@@ -182,7 +171,20 @@
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
     width:         calc(100% - (#{$spacing-unit} / 2));
   }
+  .footer-col-3 {
+    text-align: left;
+  }
 }
+
+
+
+/**
+ * Article
+ */
+article {
+  text-align: justify;
+}
+
 
 
 /**
@@ -217,9 +219,7 @@
 }
 
 .post-content {
-  font-family: $post-font-family;
   margin-bottom: $spacing-unit;
-  text-align: justify;
 
   a {
     text-decoration: underline;
@@ -268,7 +268,6 @@
 
   p {
     color: $grey-color-dark;
-    font-family: $post-font-family;
     height: $excerpt-height;
     text-align: justify;
     text-overflow: ellipsis;
@@ -344,6 +343,10 @@ ul.post-meta {
 /**
  * Utility classes
  */
+.no-margin {
+  margin: 0;
+}
+
 .no-underline {
   text-decoration: none;
 
