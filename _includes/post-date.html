@@ -1,0 +1,21 @@
+{%- if post -%}
+  {%- assign post_date = post.date -%}
+{%- else -%}
+  {%- assign post_date = page.date -%}
+{%- endif -%}
+
+{%- assign today = site.time | date: '%s' -%}
+{%- assign start = post_date | date: '%s' -%}
+{%- assign seconds_since = today | minus: start -%}
+{%- assign hours_since = seconds_since | divided_by: 60 | divided_by: 60 -%}
+{%- assign days_since = hours_since | divided_by: 24 -%}
+{%- assign days_since_threshold = site.days_since_threshold | default: 30 -%}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+<time class="dt-published" datetime="{{ post_date | date_to_xmlschema }}" itemprop="datePublished" title="{{- post_date | date: date_format -}}">
+  {%- if days_since < days_since_threshold -%}
+    {{- post_date | timeago: depth: 1 -}}
+  {%- else -%}
+    {{- post_date | date: date_format -}}
+  {%- endif -%}
+</time>

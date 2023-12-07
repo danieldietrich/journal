@@ -29,15 +29,19 @@ linkedin_username: daniel-dietrich-kiel
 # - username: jekyll2
 #   instance: example.com
 
-show_excerpts: true # set to true to show excerpts on the homepage
+# Permalinks
+permalink: /:title/
+
+# Set to true to show excerpts on the homepage
+show_excerpts: true
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
   date_format: "%b %-d, %Y"
 
-# Permalinks
-permalink: /:title/
+# Show time ago instead of exact date until threshold reaches
+days_since_threshold: 30
 
 # Reading time configuration
 reading_time:
@@ -53,6 +57,7 @@ header_pages:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-timeago
 
 # Exclude from processing.
 # The following items will not be processed, by default.
