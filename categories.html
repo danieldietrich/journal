@@ -20,7 +20,9 @@ title: Categories
                   {{ post.title | escape }}
                 </a>
               </div>
-              <div class="post-meta">{%- include post-meta.html -%}</div>
+              <div class="small">
+                {%- include post-meta.html -%}
+              </div>
               {%- if site.show_excerpts -%}
                 <div class="post-excerpt">
                   {{ post.excerpt }}

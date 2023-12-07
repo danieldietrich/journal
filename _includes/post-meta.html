@@ -3,8 +3,8 @@
 {% else %}
   {% assign post_content = page.content %}
 {% endif %}
-<span>{%- include post-date.html -%}</span>
-&middot;
-<span>{{ post_content | reading_time }}</span>
-&middot;
-<span>{%- include post-categories.html -%}</span>
+<ul class="post-meta">
+  <li>{%- include post-date.html -%}</li>
+  <li>{{ post_content | reading_time }}</li>
+  <li>{%- include post-categories.html -%}</li>
+</ul>

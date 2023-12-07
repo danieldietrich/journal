@@ -125,33 +125,6 @@ a {
   }
 }
 
-.no-underline {
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.post-meta a {
-  color: $grey-color;
-  text-decoration: underline;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.post-content,
-.rss-subscribe {
-  a {
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
 
 
 /**

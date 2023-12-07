@@ -13,7 +13,9 @@ layout: base
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
-          <span class="post-meta">{%- include post-meta.html -%}</span>
+          <div class="small">
+            {%- include post-meta.html -%}
+          </div>
         </h3>
         {%- if site.show_excerpts -%}
           <div class="post-excerpt">
