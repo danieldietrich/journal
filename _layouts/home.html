@@ -20,7 +20,7 @@ layout: default
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
-          <span class="post-meta">{%- include post-meta.html post_author=post.author post_date=post.date post_content=post.content -%}</span>
+          <span class="post-meta">{%- include post-meta.html -%}</span>
         </h3>
         {%- if site.show_excerpts -%}
           <div class="fade-container">
