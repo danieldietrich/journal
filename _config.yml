@@ -6,6 +6,7 @@ description: >- # this means to ignore newlines next property
   Data for my future avatar.
 baseurl: "" # the subpath of the site, e.g. /blog
 url: "https://danieldietrich.dev"
+github_repo: "https://github.com/danieldietrich/journal"
 
 # Google Analytics (gtag)
 google_analytics: G-377JP30S7M

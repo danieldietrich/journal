@@ -310,7 +310,7 @@ ul.post-meta {
   display: inline-block; /* Display the unordered list in a single line */
   a {
     color: $grey-color;
-    text-decoration: underline;
+    text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
