@@ -8,6 +8,7 @@
 {%- else -%}
   {%- assign categories = page.categories -%}
 {%- endif -%}
+
 <ul class="post-meta">
   <li>{%- include post-date.html -%}</li>
   <li>{{ post_content | reading_time }}</li>
