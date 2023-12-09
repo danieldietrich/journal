@@ -13,9 +13,9 @@ create_hashtags() {
   sed 's/\([^ ]\+\)/#\1/g'
 }
 
-# Encode stdin for use as a URL parameter.
+# RFC 3986 URI encoding of stdin
 url_encode() {
-  ruby -r cgi -e "puts CGI.escape(\$stdin.read)"
+  ruby -r erb -e "puts ERB::Util.url_encode(\$stdin.read)"
 }
 
 # Trims stdin
