@@ -6,6 +6,13 @@ This is the source code of my personal website [danieldietrich.dev](https://dani
 
 Run `./journal` for further information.
 
+## Writing blog posts
+
+1. Run `./journal draft "My Title"`
+2. Edit `_drafts/my-title.md`
+3. Run `./journal publish _drafts/my-title.md` and follow the instructions
+4. Visit [danieldietrich.dev](https://danieldietrich.dev)
+
 ## Credits
 
 The theme is based on [Minima v2.5.1](https://github.com/jekyll/minima/tree/38a84a949f9753c4542e25f422935f59b4913053).
