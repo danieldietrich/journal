@@ -1,3 +1,5 @@
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/danieldietrich/journal)
+
 # Daniel's Journal
 
 This is the source code of my personal website [danieldietrich.dev](https://danieldietrich.dev). The website is built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
