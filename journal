@@ -8,6 +8,21 @@ slugify_title() {
   echo "$1" | tr "[:upper:]" "[:lower:]" | sed -e "s/ /-/g" -e "s/[^a-zA-Z0-9-]//g"
 }
 
+# Prefixes each word in stdin with '#'
+create_hashtags() {
+  sed 's/\([^ ]\+\)/#\1/g'
+}
+
+# Encode stdin for use as a URL parameter.
+url_encode() {
+  ruby -r cgi -e "puts CGI.escape(\$stdin.read)"
+}
+
+# Trims stdin
+trim() {
+  sed 's/^[ \t]*//; s/[ \t]*$//'
+}
+
 # Define a function to create a draft post
 create_draft() {
   title="$1"
@@ -36,17 +51,17 @@ EOF
 }
 
 publish_post() {
-  path="$1"
+  draft_path="$1"
   date_arg="$2"
 
   # Check if the path exists
-  if [ ! -f "$path" ]; then
-    echo "File not found: $path"
+  if [ ! -f "$draft_path" ]; then
+    echo "File not found: $draft_path"
     exit 1
   fi
 
   # Get the filename from the path
-  filename=$(basename "$path")
+  filename=$(basename "$draft_path")
 
   # If a date argument is provided, use it; otherwise, get the current date
   if [ -n "$date_arg" ]; then
@@ -64,9 +79,23 @@ publish_post() {
   fi
 
   # Move the file to the `_posts` directory inside the script's directory
-  mv "$path" "$script_dir/_posts/$new_filename"
+  post_path="$script_dir/_posts/$new_filename"
 
-  echo "Post published: $script_dir/_posts/$new_filename"
+  mv "$draft_path" "$post_path"
+
+  # Create a click-to-tweet link
+  post_title=$(grep -m 1 "^title:" "$post_path" | cut -d ':' -f 2 | trim)
+  post_categories=$(grep -m 1 "^categories:" "$post_path" | cut -d ':' -f 2 | trim | create_hashtags)
+  post_url="https://danieldietrich.dev/${filename%%.md}"
+  tweet_url=$(echo -n "$post_url" | url_encode)
+  tweet_text=$(echo -n "Read my new blog post: $post_title. #DanielsJournal $post_categories" | trim | url_encode)
+  click_to_tweet="https://twitter.com/intent/tweet?text=${tweet_text}&url=${tweet_url}"
+
+  echo "Post published: $post_path"
+  echo
+  echo "Next steps:"
+  echo -e "  1. git commit -m \"Publish $post_url\" $post_path ; git push"
+  echo -e "  2. CMD-CLICK TO TWEET: $click_to_tweet"
 }
 
 # Define a function to print the usage of the script
@@ -106,9 +135,9 @@ case "$command" in
       echo "Usage: $0 publish <path> [date]"
       exit 1
     fi
-    path="$2"
+    draft_path="$2"
     date_arg="${3:-}"
-    publish_post "$path" "$date_arg"
+    publish_post "$draft_path" "$date_arg"
     ;;
   install)
     # For the install command, no extra arguments are expected
