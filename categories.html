@@ -26,7 +26,7 @@ title: Categories
                 </div>
               </h3>
               {%- if site.show_excerpts -%}
-                <div class="post-excerpt">
+                <div class="post-excerpt" onclick="window.location.href='{{ post.url | relative_url }}'">
                   {{ post.excerpt }}
                 </div>
               {%- endif -%}
