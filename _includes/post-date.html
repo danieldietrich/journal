@@ -12,10 +12,11 @@
 {%- assign days_since_threshold = site.days_since_threshold | default: 30 -%}
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 
-<time class="dt-published" datetime="{{ post_date | date_to_xmlschema }}" itemprop="datePublished" title="{{- post_date | date: date_format -}}">
+
+{% unless post %}<time class="dt-published" datetime="{{ post_date | date_to_xmlschema }}" itemprop="datePublished" title="{{- post_date | date: date_format -}}">{%- endunless -%}
   {%- if days_since < days_since_threshold -%}
     {{- post_date | timeago: depth: 1 -}}
   {%- else -%}
     {{- post_date | date: date_format -}}
   {%- endif -%}
-</time>
+{% unless post %}</time>{%- endunless -%}
