@@ -37,6 +37,10 @@ reading_time:
 header_pages:
   - about.md
 
+# Minify output
+sass:
+  style: compressed
+
 # Build settings
 plugins:
   - jekyll-feed
