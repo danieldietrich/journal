@@ -9,29 +9,34 @@
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
           <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
+            &copy; {{ site.author | escape }}
           </li>
-          {%- if site.email -%}
-          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          {%- endif -%}
-          <li>{%- include social.html -%}</li>
+          <li>
+            <a href="https://github.com/{{ site.github_username| cgi_escape | escape }}" title="{{ site.github_username | escape }}">
+              <svg class="svg-icon" viewBox="0 0 18 18"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}" title="{{ site.linkedin_username | escape }}">
+              <svg class="svg-icon" viewBox="0 0 18 18"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg>
+            </a>
+            <a href="https://www.twitter.com/{{ site.twitter_username| cgi_escape | escape }}" title="{{ site.twitter_username | escape }}">
+              <svg class="svg-icon" viewBox="0 0 18 18"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+            </a>
+          </li>
         </ul>
       </div>
 
       <div class="footer-col footer-col-2">
         <ul class="legal-list">
           <li><a href="{{ "/imprint/" | relative_url }}">Imprint</a></li>
+          <li><a href="{{ "/privacy/" | relative_url }}">Privacy</a></li>
+          <li><a href="{{ "/terms/" | relative_url }}">Terms</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-col-3">
         <p>
           <a href="{{ "/feed.xml" | relative_url }}">
-            Subscribe via RSS
+            Subscribe via <svg class="svg-icon" viewBox="0 0 20 20"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#rss' | relative_url }}"></use></svg>RSS
           </a>
         </p>
       </div>
