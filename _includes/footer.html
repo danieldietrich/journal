@@ -7,22 +7,17 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            &copy; {{ site.author | escape }}
-          </li>
-          <li>
-            <a href="https://github.com/{{ site.github_username | cgi_escape | escape }}" title="Daniel on GitHub">
-              <svg class="svg-icon" viewBox="0 0 18 18"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#github' | relative_url }}"></use></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}" title="Daniel on LinkedIn">
-              <svg class="svg-icon" viewBox="0 0 18 18"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg>
-            </a>
-            <a href="https://www.twitter.com/{{ site.twitter_username | cgi_escape | escape }}" title="Daniel on X">
-              <svg class="svg-icon" viewBox="0 0 18 18"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
-            </a>
-          </li>
-        </ul>
+        &copy; {{ site.author | escape }}
+        &nbsp;
+        <a href="https://github.com/{{ site.github_username | cgi_escape | escape }}" title="Daniel on GitHub">
+          <svg class="svg-icon svg-social"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}" title="Daniel on LinkedIn">
+          <svg class="svg-icon svg-social"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg>
+        </a>
+        <a href="https://www.twitter.com/{{ site.twitter_username | cgi_escape | escape }}" title="Daniel on X">
+          <svg class="svg-icon svg-social"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+        </a>
       </div>
 
       <div class="footer-col footer-col-2">
@@ -34,10 +29,10 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>
           Subscribe via
-          <svg class="svg-icon" viewBox="0 0 20 20"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">RSS</a>
-        </p>
+          <a href="{{ "/feed.xml" | relative_url }}">
+            <svg class="svg-icon svg-rss" viewBox="0 0 16 16"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#rss' | relative_url }}"></use></svg>RSS
+          </a>
       </div>
     </div>
   </div>
