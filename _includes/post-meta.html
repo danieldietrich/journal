@@ -15,7 +15,7 @@
   {% if tags.size > 0 %}
     <li>
       {%- for tag in tags -%}
-        <a href="{{ site.baseurl }}/#{{ tag }}">#{{ tag }}</a>
+        <a href="{{ site.baseurl }}/#{{ tag }}">{{ tag }}</a>
         {% if forloop.last %}{% else %} {% endif %}
       {%- endfor -%}
     </li>
