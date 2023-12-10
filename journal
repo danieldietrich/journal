@@ -43,7 +43,7 @@ create_draft() {
 ---
 layout: post
 title: "$title"
-categories:
+tags:
 ---
 EOF
 
@@ -85,10 +85,10 @@ publish_post() {
 
   # Create a click-to-tweet link
   post_title=$(grep -m 1 "^title:" "$post_path" | cut -d ':' -f 2 | trim)
-  post_categories=$(grep -m 1 "^categories:" "$post_path" | cut -d ':' -f 2 | trim | create_hashtags)
+  post_tags=$(grep -m 1 "^tags:" "$post_path" | cut -d ':' -f 2 | trim | create_hashtags)
   post_url="https://danieldietrich.dev/${filename%%.md}"
   tweet_url=$(echo -n "$post_url" | url_encode)
-  tweet_text=$(echo -n "Read my new blog post: $post_title. #DanielsJournal $post_categories" | trim | url_encode)
+  tweet_text=$(echo -n "Read my new blog post: $post_title. #DanielsJournal $post_tags" | trim | url_encode)
   click_to_tweet="https://twitter.com/intent/tweet?text=${tweet_text}&url=${tweet_url}"
 
   echo "Post published: $post_path"
