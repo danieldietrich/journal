@@ -1,7 +1,7 @@
 (function () {
 
   function filter_posts() {
-    const filter = window.location.hash.replace('#', '');
+    const filter = window.location.hash.replace('#', '').toLocaleLowerCase();
     if (filter) {
       document.querySelectorAll(`ul.post-list > li:not(.${filter})`).forEach((post) => {
         post.hidden = true;
