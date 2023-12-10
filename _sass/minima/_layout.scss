@@ -254,10 +254,6 @@ article {
   }
 }
 
-.post-list-heading {
-  @include relative-font-size(1.75);
-}
-
 .post-list {
   margin-left: 0;
   list-style: none;
@@ -293,16 +289,6 @@ article {
   }
 }
 
-.post-list-small {
-  p {
-    @include relative-font-size(0.9);
-  }
-
-  .post-excerpt {
-    height: $excerpt-height-small;
-  }
-}
-
 ul.post-meta {
   color: $grey-color;
   list-style: none;
@@ -330,31 +316,6 @@ ul.post-meta {
   @include relative-font-size(1.5);
 }
 
-.post-link-small {
-  display: block;
-  @include relative-font-size(1.2);
-}
-
-.category-posts {
-  margin-left: $spacing-unit;
-}
-
-
-
-/**
- * Utility classes
- */
-.no-margin {
-  margin: 0;
-}
-
-.no-underline {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
 
 .small {
   font-size: $small-font-size;

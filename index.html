@@ -2,13 +2,14 @@
 layout: base
 ---
 
+{% content_for head %}
+<script src="/assets/js/filter-posts.js"></script>
+{% endcontent_for %}
+
 {%- if site.posts.size > 0 -%}
-  {%- if page.list_title -%}
-    <h2 class="post-list-heading">{{ page.list_title }}</h2>
-  {%- endif -%}
   <ul class="post-list">
     {%- for post in site.posts -%}
-      <li>
+      <li class="{{ post.categories | join: ' ' }}" hidden>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}

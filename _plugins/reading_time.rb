@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "liquid"
-
 module Jekyll
   module ReadingTime
 
