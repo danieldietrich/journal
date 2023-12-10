@@ -129,7 +129,7 @@
 /**
  * Article
  */
-article {
+article p {
   text-align: justify;
 }
 
@@ -242,7 +242,7 @@ ul.post-meta {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-block; /* Display the unordered list in a single line */
+  display: block;
   a {
     color: $grey-color;
     text-decoration: none;
@@ -252,16 +252,21 @@ ul.post-meta {
   }
   li {
     display: inline;
+    overflow-wrap: break-word;
   }
-  li:not(:first-child)::before {
+  li:not(:last-child)::after {
     content: '·';
-    margin-right: 5px;
+    margin-left: 5px;
   }
 }
 
 .post-link {
   display: block;
   @include relative-font-size(1.5);
+}
+
+.tag {
+  white-space: nowrap;
 }
 
 
