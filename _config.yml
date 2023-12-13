@@ -33,6 +33,10 @@ days_since_threshold: 30
 reading_time:
   words_per_minute: 180 # Average words per minute reading, default to 180
 
+# Markdown parser & converter
+kramdown:
+  footnote_backlink: "\u21B5"
+
 # Header pages in order as they should show up
 header_pages:
   - about.md
