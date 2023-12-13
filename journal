@@ -94,7 +94,7 @@ publish_post() {
   echo "Post published: $post_path"
   echo
   echo "Next steps:"
-  echo -e "  1. git commit -m \"Publish $post_url\" $post_path ; git push"
+  echo -e "  1. git add $post_path && git commit -m \"Publish $post_url\" $post_path && git push"
   echo -e "  2. CMD-CLICK TO TWEET: $click_to_tweet"
 }
 
