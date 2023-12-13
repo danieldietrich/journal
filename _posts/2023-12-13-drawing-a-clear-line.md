@@ -48,4 +48,4 @@ I slowly but steadily moved away from Vavr years ago. But still, I did not find 
 
 [javaslang-announcement]: https://x.com/danieldietrich/status/446435609700491264
 [maven-central]: https://mvnrepository.com/artifact/com.javaslang/javaslang/1.0.0
-[nice]: https://www.youtube.com/watch?v=uECuqa2zVbs
+[nice]: https://youtu.be/uECuqa2zVbs
