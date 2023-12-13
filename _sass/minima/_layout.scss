@@ -273,6 +273,14 @@ ul.post-meta {
   @include relative-font-size(1.5);
 }
 
+.footnotes {
+  font-size: $small-font-size;
+  margin-top: 2em;
+  p {
+    margin-bottom: 0.5em;
+  }
+}
+
 
 
 /**
