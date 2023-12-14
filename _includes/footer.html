@@ -3,11 +3,15 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+    <h2 class="footer-heading">
+      <a href="{{ "/" | relative_url }}">
+        {{ site.title | escape }}
+      </a>
+    </h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        &copy; {{ site.author | escape }}
+        &copy; <a href="mailto:{{ site.email }}">{{ site.author | escape }}</a>
         &nbsp;
         <a href="https://github.com/{{ site.github_username | cgi_escape | escape }}" title="Daniel on GitHub">
           <svg class="svg-icon svg-social"><use xlink:href="{{ '/assets/img/minima-social-icons.svg#github' | relative_url }}"></use></svg>
