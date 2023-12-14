@@ -80,6 +80,10 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
+@mixin relative-font-size-small($ratio) {
+  font-size: $small-font-size * $ratio;
+}
+
 // Import partials.
 @import
   "minima/base",

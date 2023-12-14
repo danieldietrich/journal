@@ -151,8 +151,11 @@ code,
 kbd,
 samp,
 tt {
-  @include relative-font-size(0.9735);
   font-family: $code-font-family;
+  @include relative-font-size(0.9735);
+  .footnotes & {
+    @include relative-font-size-small(0.9735);
+  }
 }
 
 pre {
