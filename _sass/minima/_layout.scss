@@ -342,7 +342,7 @@ ul.post-meta {
   box-shadow: 0 2px 4px rgba(0,0,0,0.18);
   opacity: 0;
   transform: translateY(10px) scale(0.5); /* Adjust vertical position and scale for animation */
-  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+  transition: opacity 50ms ease-in-out, transform 50ms ease-in-out;
   box-sizing: border-box;
 }
 
@@ -362,7 +362,7 @@ ul.post-meta {
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent $grey-color transparent;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 50ms ease-in-out;
   box-sizing: border-box;
 }
 
