@@ -304,6 +304,9 @@ ul.post-meta {
   }
 }
 
+/**
+ * Code copy-to-clipboard button
+ */
 .code-container {
   position: relative;
 }
@@ -313,15 +316,19 @@ ul.post-meta {
   top: 0;
   right: 0;
   border: none;
-  background: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 10; /* Ensure the button is above all other elements */
   fill: $grey-color;
-  & :hover {
-    fill: #000;
-  }
+  background-color: $grey-color-superlight;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10; /* Ensure the button is above all other elements */
 }
+
+.copy-button:hover {
+  fill: black;
+  background-color: $grey-color-light;
+}
+
 
 
 /**
