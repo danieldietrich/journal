@@ -324,6 +324,49 @@ ul.post-meta {
 }
 
 
+/**
+ * Tooltips
+ */
+ .tooltip {
+  font-family: $headline-font-family;
+  position: absolute;
+  padding: 8px 12px;
+  background: $grey-color; /* Tooltip background color */
+  color: white; /* Tooltip text color */
+  border-radius: 4px;
+  font-size: 14px;
+  display: none;
+  z-index: 1000;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+  opacity: 0;
+  transform: translateY(10px) scale(0.5); /* Adjust vertical position and scale for animation */
+  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+  box-sizing: border-box;
+}
+
+.tooltip.is-active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0px) scale(1);
+}
+
+/* Tooltip's upward-pointing tip */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -20px; /* Half of the height of the tip to make it appear just above the bottom of the tooltip */
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent $grey-color transparent;
+  transition: opacity 250ms ease-in-out;
+  box-sizing: border-box;
+}
+
+
 
 /**
  * Utilities

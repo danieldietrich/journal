@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Create a copy button
       const button = document.createElement('button');
       button.className = 'copy-button';
+      button.setAttribute("data-tooltip", "Copy to clipboard");
       button.type = 'button';
       button.ariaLabel = 'Copy code to clipboard';
       button.innerHTML = svgIcon;
