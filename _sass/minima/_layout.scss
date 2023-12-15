@@ -316,16 +316,16 @@ ul.post-meta {
   top: 0;
   right: 0;
   border: none;
-  fill: $grey-color;
+  fill: black;
   background-color: $grey-color-superlight;
   border-radius: 6px;
   padding: 8px 12px;
   cursor: pointer;
   z-index: 10; /* Ensure the button is above all other elements */
+  transition: all 50ms ease-in-out, transform 50ms ease-in-out;
 }
 
 .copy-button:hover {
-  fill: black;
   background-color: $grey-color-light;
 }
 
@@ -349,7 +349,7 @@ ul.post-meta {
   box-shadow: 0 2px 4px rgba(0,0,0,0.18);
   opacity: 0;
   transform: translateY(10px) scale(0.5); /* Adjust vertical position and scale for animation */
-  transition: opacity 50ms ease-in-out, transform 50ms ease-in-out;
+  transition: all 50ms ease-in-out, transform 50ms ease-in-out;
   box-sizing: border-box;
 }
 
@@ -369,7 +369,7 @@ ul.post-meta {
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent $grey-color transparent;
-  transition: opacity 50ms ease-in-out;
+  transition: all 50ms ease-in-out, transform 50ms ease-in-out;
   box-sizing: border-box;
 }
 
