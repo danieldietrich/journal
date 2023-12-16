@@ -14,16 +14,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Function to hide the tooltip
   const hideTooltip = () => {
-      tooltip.classList.remove('is-active');
+    tooltip.removeAttribute("style");
+    tooltip.classList.remove('is-active');
   };
 
   // Attach event listeners to elements with a 'data-tooltip' attribute
   document.querySelectorAll('[data-tooltip]').forEach((element) => {
-      element.addEventListener('mouseenter', (event) => {
-          const message = event.target.getAttribute('data-tooltip');
-          showTooltip(element, message);
-      });
-      element.addEventListener('mouseleave', hideTooltip);
-      element.addEventListener('click', hideTooltip);
+    element.addEventListener('mouseenter', (event) => {
+        const message = event.target.getAttribute('data-tooltip');
+        showTooltip(element, message);
+    });
+    element.addEventListener('mouseleave', hideTooltip);
+    element.addEventListener('click', hideTooltip);
   });
 });
