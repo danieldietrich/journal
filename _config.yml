@@ -22,13 +22,6 @@ permalink: /:title/
 # Set to true to show excerpts on the homepage
 show_excerpts: true
 
-# Minima date format (see http://shopify.github.io/liquid/filters/date/)
-minima:
-  date_format: "%b %-d, %Y"
-
-# Show time ago instead of exact date until threshold reaches
-days_since_threshold: 30
-
 # Reading time configuration
 reading_time:
   words_per_minute: 180 # Average words per minute reading, default to 180
@@ -49,7 +42,6 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-timeago
 
 # Exclude from processing
 exclude:

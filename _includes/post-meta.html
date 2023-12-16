@@ -1,16 +1,16 @@
-{% if post %}
-  {% assign post_content = post.content %}
-{% else %}
-  {% assign post_content = page.content %}
-{% endif %}
 {%- if post -%}
+  {%- assign post_content = post.content -%}
+  {%- assign post_date = post.date -%}
   {%- assign tags = post.tags -%}
 {%- else -%}
+  {%- assign post_content = page.content -%}
+  {%- assign post_date = page.date -%}
   {%- assign tags = page.tags -%}
 {%- endif -%}
+{%- assign date_format = "%b %-d, %Y" -%}
 
 <ul class="post-meta">
-  <li>{%- include post-date.html -%}</li>
+  <li><time class="date-published" datetime="{{ post_date | date_to_xmlschema }}" itemprop="datePublished" title="{{- post_date | date: date_format -}}">{{- post_date | date: date_format -}}</time></li>
   <li>{{ post_content | reading_time }}</li>
   {% if tags.size > 0 %}
     <li>
