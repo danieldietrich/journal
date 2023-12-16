@@ -32,9 +32,13 @@
 
     <div id="tooltip" class="tooltip"></div>
 
-    <div id="statusLabel" class="status-label" role="alert">
-      <span id="statusText">Copy successful!</span>
-      <button id="closeStatus" class="close-button">&times;</button>
+    <div id="statusLabelContainer" class="status-label-container">
+      <template id="statusLabelTemplate">
+        <div class="status-label">
+            <span class="status-text"></span>
+            <button class="close-button">&times;</button>
+        </div>
+      </template>
     </div>
 
     <script src="/assets/js/status-label.js"></script>

@@ -382,13 +382,23 @@ ul.post-meta {
 /**
  * Status label
  */
+ .status-label-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px; /* Space from the top of the viewport */
+}
+
 .status-label {
   font-family: $headline-font-family;
   font-size: 0.9em;
-  position: fixed;
-  top: 8px;
-  left: 50%;
-  z-index: 1000;
+  margin-top: 4px; /* Space between status labels */
+  margin-bottom: 8px;
   padding: 10px 16px;
   background: #47B881;
   color: white;
@@ -398,20 +408,17 @@ ul.post-meta {
   display: flex;
   align-items: center;
   opacity: 0;
-  transform: translate(-50%, 10px) scale(0.5); /* Adjust vertical position and scale for animation */
+  transform: translateY(10px) scale(0.5);
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+
   .close-button {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     font-size: 20px;
+    margin-left: 6px; /* Space from the status label text */
   }
-}
-
-.status-label-active {
-  opacity: 1;
-  transform: translate(-50%, 0px) scale(1);
 }
 
 

@@ -3,25 +3,39 @@
 // Example usage from other parts of the site
 // window.showStatusLabel('This is a status message!');
 window.showStatusLabel = function(message) {
-  const statusLabel = document.getElementById('statusLabel');
-  const statusText = document.getElementById('statusText');
-  statusText.textContent = message; // Set the variable text
-  statusLabel.classList.add('status-label-active');
-  tooltip.style.display = ''; // Reset display to use CSS for showing/hiding
+    // Reference the template and container elements
+    var template = document.getElementById('statusLabelTemplate');
+    var container = document.getElementById('statusLabelContainer');
 
-  // Automatically hide the label after 2 seconds if not already closed
-  setTimeout(function() {
-      if (statusLabel.classList.contains('status-label-active')) {
-          statusLabel.classList.remove('status-label-active');
-      }
-  }, 3000);
+    // Clone the template content
+    var clone = document.importNode(template.content, true);
+
+    // Set the message text
+    var statusText = clone.querySelector('.status-text');
+    statusText.textContent = message;
+
+    // Append the new status label to the container
+    container.insertBefore(clone, container.firstChild);
+
+    // Access the newly added status label div to modify styles and add event listeners
+    var statusLabel = container.firstElementChild;
+
+    // Animate the status label's appearance
+    requestAnimationFrame(() => {
+        statusLabel.style.opacity = 1;
+        statusLabel.style.transform = 'translateY(0) scale(1)';
+    });
+
+    // Close button functionality
+    var closeButton = statusLabel.querySelector('.close-button');
+    closeButton.onclick = function() {
+        statusLabel.remove();
+    };
+
+    // Automatically remove the status label after 2 seconds
+    setTimeout(function() {
+        if (statusLabel.parentElement) { // Check if it wasn't closed manually
+            statusLabel.remove();
+        }
+    }, 2000);
 };
-
-// Close button functionality to hide the status label immediately
-document.addEventListener('DOMContentLoaded', function() {
-  const closeStatus = document.getElementById('closeStatus');
-  closeStatus.addEventListener('click', function() {
-      const statusLabel = document.getElementById('statusLabel');
-      statusLabel.classList.remove('status-label-active');
-  });
-});
