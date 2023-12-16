@@ -353,7 +353,7 @@ ul.post-meta {
   box-shadow: 0 2px 4px rgba(0,0,0,0.18);
   opacity: 0;
   transform: translateY(10px) scale(0.5); /* Adjust vertical position and scale for animation */
-  transition: all 50ms ease-in-out, transform 50ms ease-in-out;
+  transition: opacity 50ms ease-in-out, transform 50ms ease-in-out;
   box-sizing: border-box;
 }
 
@@ -373,8 +373,45 @@ ul.post-meta {
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent $grey-color transparent;
-  transition: all 50ms ease-in-out, transform 50ms ease-in-out;
+  transition: opacity 50ms ease-in-out, transform 50ms ease-in-out;
   box-sizing: border-box;
+}
+
+
+
+/**
+ * Status label
+ */
+.status-label {
+  font-family: $headline-font-family;
+  font-size: 0.9em;
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: #47B881;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translate(-50%, 10px) scale(0.5); /* Adjust vertical position and scale for animation */
+  transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
+  .close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+  }
+}
+
+.status-label-active {
+  opacity: 1;
+  transform: translate(-50%, 0px) scale(1);
 }
 
 

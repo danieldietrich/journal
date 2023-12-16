@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       button.addEventListener('click', () => {
           const codeToCopy = codeBlock.innerText;
           navigator.clipboard.writeText(codeToCopy).then(() => {
-              console.log('Code copied to clipboard!');
-              // Optionally, provide user with feedback that text has been copied.
+            window.showStatusLabel('Code copied!');
           }).catch(err => {
               console.error('Failed to copy text', err);
           });
