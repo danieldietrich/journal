@@ -3,9 +3,9 @@
  */
 .site-header {
   font-family: $headline-font-family;
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+  color: white;
+  background-color: gray;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -22,7 +22,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: white;
   }
 }
 
@@ -39,7 +39,7 @@
   }
 
   .page-link {
-    color: $text-color;
+    color: white;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
@@ -56,8 +56,11 @@
  */
 .site-footer {
   font-family: $headline-font-family;
-  border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+  .wrapper {
+    border-top: 1px solid $grey-color-light;
+    padding-top: $spacing-unit / 4;
+  }
 }
 
 .footer-heading {
@@ -149,6 +152,14 @@ footer {
   vertical-align: -2px;
 }
 
+.syncwave {
+  padding-bottom: 72px;
+  background-color: $grey-color;
+  .line {
+    background-color: white;
+  }
+}
+
 
 
 /**
@@ -164,7 +175,7 @@ article p {
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding: $spacing-unit * 2;
   flex: 1;
 }
 
