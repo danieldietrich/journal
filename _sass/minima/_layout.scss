@@ -266,7 +266,7 @@ article p {
   }
 }
 
-ul.post-meta {
+ul.post-meta, ul.post-links {
   color: $grey-color;
   list-style: none;
   padding: 0;
@@ -276,8 +276,11 @@ ul.post-meta {
     color: $grey-color;
     text-decoration: none;
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
+  }
+  a[data-tooltip]:hover {
+    text-decoration: none;
   }
   li {
     display: inline;
