@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
 
   function filter_posts() {
@@ -17,7 +19,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => { filter_posts() });
-
   window.addEventListener('hashchange', () => { filter_posts() });
 
 })();

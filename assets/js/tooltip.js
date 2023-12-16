@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+"use strict";
 
+document.addEventListener('DOMContentLoaded', () => {
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
 
   if (!isTouchDevice) {

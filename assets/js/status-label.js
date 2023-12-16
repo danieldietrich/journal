@@ -37,5 +37,5 @@ window.showStatusLabel = function(message) {
         if (statusLabel.parentElement) { // Check if it wasn't closed manually
             statusLabel.remove();
         }
-    }, 2000);
+    }, 3000);
 };
