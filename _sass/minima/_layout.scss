@@ -56,14 +56,12 @@
 .site-footer {
   font-family: $headline-font-family;
   padding: $spacing-unit 0;
-  .wrapper {
-    border-top: 1px solid $grey-color-light;
-    padding-top: $spacing-unit / 4;
-  }
 }
 
 .footer-heading {
   @include relative-font-size(1.125);
+  border-top: 1px solid $grey-color-light;
+  padding-top: $spacing-unit / 4;
   margin-bottom: $spacing-unit / 2;
 }
 
