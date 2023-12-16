@@ -369,10 +369,10 @@ ul.post-meta, ul.post-links {
 .tooltip::after {
   content: '';
   position: absolute;
-  top: -20px; /* Half of the height of the tip to make it appear just above the bottom of the tooltip */
+  top: -16px; /* Half of the height of the tip to make it appear just above the top of the tooltip */
   left: 50%;
-  margin-left: -10px;
-  border-width: 10px;
+  margin-left: -8px;
+  border-width: 8px;
   border-style: solid;
   border-color: transparent transparent $grey-color transparent;
   transition: opacity 50ms ease-in-out, transform 50ms ease-in-out;

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tooltip.style.display = 'block'; // Temporarily display to calculate dimensions
       const elementRect = element.getBoundingClientRect();
       tooltip.style.left = `${elementRect.left + (elementRect.width / 2) - (tooltip.offsetWidth / 2)}px`;
-      tooltip.style.top = `${elementRect.bottom + window.scrollY + 10}px`; // Position below with 10px gap
+      tooltip.style.top = `${elementRect.bottom + window.scrollY + 8}px`; // Position below with 8px gap
       tooltip.classList.add('is-active');
       tooltip.style.display = ''; // Reset display to use CSS for showing/hiding
     };
