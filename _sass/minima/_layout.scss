@@ -316,24 +316,23 @@ ul.post-meta, ul.post-links {
  */
 .code-container {
   position: relative;
-}
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    border: none;
+    fill: black;
+    background-color: $grey-color-superlight;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10; /* Ensure the button is above all other elements */
+    transition: background-color 50ms ease-in-out;
 
-.copy-button {
-  position: absolute;
-  top: 8px;
-  right: 0px;
-  border: none;
-  fill: black;
-  background-color: $grey-color-superlight;
-  border-radius: 6px;
-  padding: 8px 12px;
-  cursor: pointer;
-  z-index: 10; /* Ensure the button is above all other elements */
-  transition: all 50ms ease-in-out, transform 50ms ease-in-out;
-}
-
-.copy-button:hover {
-  background-color: $grey-color-light;
+    &:hover {
+      background-color: $grey-color-light;
+    }
+  }
 }
 
 
