@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Function to hide the tooltip
   const hideTooltip = () => {
-    tooltip.removeAttribute("style");
+    tooltip.removeAttribute('style');
     tooltip.classList.remove('is-active');
+    tooltip.textContent = '';
   };
 
   // Attach event listeners to elements with a 'data-tooltip' attribute
