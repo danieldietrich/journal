@@ -10,7 +10,14 @@ slugify_title() {
 
 # Prefixes each word in stdin with '#'
 create_hashtags() {
-  sed 's/\([^ ]\+\)/#\1/g'
+  input_string=$(cat)
+
+  # Remove commas, replace one or more spaces with a single space
+  # and trim leading/trailing spaces
+  sanitized_string=$(echo "$input_string" | tr '\t' ' ' | tr ',' ' ' | tr -s ' ' | sed 's/^ //;s/ $//')
+
+  # Add a # before each word and output the formatted string
+  echo "$sanitized_string" | sed 's/ /\n/g' | sed '/^$/d' | sed 's/^/#/' | paste -sd ' ' -
 }
 
 # RFC 3986 URI encoding of stdin
