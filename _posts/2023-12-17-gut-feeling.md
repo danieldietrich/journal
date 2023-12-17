@@ -6,7 +6,7 @@ tags: Life Meditation Philosophy Spirituality
 
 I believe that we all have antennas and that decisions can be made without engaging our brain in intense thinking about which direction to take.
 
-We travel on a time-based path, in one direction &mdash; at least that's how I experience it within my reality[^1]. On a high level, my mental model of life is that we are in a maze resembling a tree. Each moment, we stand at the root of the tree[^2] and can only move forward in time, down the tree. At each actual root, there are an infinite number of branches, but we can only traverse one branch at a time[^3].
+We travel on a time-based path, in one direction&mdash;at least that's how I experience it within my reality[^1]. On a high level, my mental model of life is that we are in a maze resembling a tree. Each moment, we stand at the root of the tree[^2] and can only move forward in time, down the tree. At each actual root, there are an infinite number of branches, but we can only traverse one branch at a time[^3].
 
 This is overwhelming&mdash;we need to make decisions about which branch to pursue. We can't see the entire tree, yet we might glimpse a few branches ahead. Although everything is interconnected, this fact doesn't necessarily simplify matters for us, right? We can never truly predict the outcome of taking a certain branch. We are left to guess, to use our intuition, our gut feeling[^4], in decision-making.
 
