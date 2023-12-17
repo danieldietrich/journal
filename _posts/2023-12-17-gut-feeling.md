@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gut Feeling"
-tags: Life Meditation Philosophy
+tags: Life Meditation Philosophy Spirituality
 ---
 
 I believe that we all have antennas and that decisions can be made without engaging our brain in intense thinking about which direction to take.
