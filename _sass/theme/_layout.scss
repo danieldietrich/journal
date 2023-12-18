@@ -406,8 +406,6 @@ ul.post-meta, ul.post-links {
   justify-content: space-between;
   display: flex;
   align-items: center;
-  opacity: 0;
-  transform: translateY(10px) scale(0.5);
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
 
   .close-button {
