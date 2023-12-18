@@ -284,6 +284,7 @@ ul.post-meta, ul.post-links {
   }
   .tag {
     white-space: nowrap;
+    margin-right: 4px;
   }
 }
 
@@ -407,7 +408,7 @@ ul.post-meta, ul.post-links {
     cursor: pointer;
     font-size: 20px;
     margin-left: 6px; /* Space from the status label text */
-    padding: 2px 0 3px 6px;
+    padding: 0 6px;
   }
 }
 
@@ -429,8 +430,10 @@ ul.post-meta, ul.post-links {
 .remove-filter {
   background: none;
   border: none;
+  color: $text-color;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
+  padding: 0 6px;
 }
 
 
