@@ -3,6 +3,11 @@
 module Jekyll
   module ReadingTime
 
+    def count_words(input)
+      words = input.split(" ").count
+      "#{words} words"
+    end
+
     def reading_time(input)
       words = input.split(" ").count
       minutes = (words / words_per_minute).floor

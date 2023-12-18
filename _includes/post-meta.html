@@ -10,8 +10,8 @@
 {%- assign date_format = "%b %-d, %Y" -%}
 
 <ul class="post-meta">
-  <li><time class="date-published" datetime="{{ post_date | date_to_xmlschema }}" itemprop="datePublished" title="{{- post_date | date: date_format -}}">{{- post_date | date: date_format -}}</time></li>
-  <li>{{ post_content | reading_time }}</li>
+  <li><time class="date-published" datetime="{{ post_date | date_to_xmlschema }}" itemprop="datePublished" data-tooltip="{{- post_date | date: date_format -}}">{{- post_date | date: date_format -}}</time></li>
+  <li><span data-tooltip="{{ post_content | count_words }}">{{ post_content | reading_time }}</span></li>
   {% if tags.size > 0 %}
     <li>
       {%- for tag in tags -%}
