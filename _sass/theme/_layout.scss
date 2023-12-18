@@ -422,6 +422,35 @@ ul.post-meta, ul.post-links {
 
 
 /**
+ * Filter
+ */
+.filter-container {
+  background-color: $grey-color-superlight;
+}
+
+.filter-notification {
+  font-family: $title-font-family;
+  font-size: $base-font-size;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-tag {
+  font-family: $headline-font-family;
+}
+
+.remove-filter {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+
+/**
  * Utilities
  */
 .small {

@@ -176,6 +176,8 @@ pre {
  * Wrapper
  */
 .wrapper {
+  width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
   margin-right: auto;
@@ -185,6 +187,8 @@ pre {
   @extend %clearfix;
 
   @include media-query($on-laptop) {
+    width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    width:         calc(#{$content-width} - (#{$spacing-unit}));
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
     padding-right: $spacing-unit / 2;

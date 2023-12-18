@@ -21,6 +21,10 @@
 
     {% include header.html %}
 
+    {%- if content_for.top -%}
+      {{ content_for.top }}
+    {%- endif -%}
+
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}

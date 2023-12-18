@@ -3,7 +3,18 @@ layout: base
 ---
 
 {% content_for head %}
-<script src="/assets/js/filter-posts.js"></script>
+  <script src="/assets/js/filter-posts.js"></script>
+{% endcontent_for %}
+
+{% content_for top %}
+  <div class="filter-container">
+    <div class="wrapper">
+      <div class="filter-notification" style="display: none;">
+        <span>Filtered by: <span class="filter-tag"></span></span>
+        <button class="remove-filter">&times;</button>
+      </div>
+    </div>
+  </div>
 {% endcontent_for %}
 
 {%- if site.posts.size > 0 -%}
