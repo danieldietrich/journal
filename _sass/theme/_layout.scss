@@ -404,11 +404,13 @@ ul.post-meta, ul.post-links {
   .close-button {
     background: none;
     border: none;
-    color: white;
     cursor: pointer;
-    font-size: 20px;
     margin-left: 6px; /* Space from the status label text */
     padding: 0 6px;
+
+    .close-icon {
+      stroke: white;
+    }
   }
 }
 
@@ -421,19 +423,28 @@ ul.post-meta, ul.post-links {
   font-family: $title-font-family;
   font-size: $base-font-size;
   padding: 10px 0;
-}
 
-.filter-tag {
-  font-family: $headline-font-family;
-}
+  .filter-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center;
 
-.remove-filter {
-  background: none;
-  border: none;
-  color: $text-color;
-  cursor: pointer;
-  font-size: 22px;
-  padding: 0 6px;
+    .filter-tag {
+      font-family: $headline-font-family;
+    }
+
+    .remove-filter {
+      background: none;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      margin-left: 6px; /* Space from the fitler tag */
+      padding: 0 6px;
+
+      .remove-icon {
+        stroke: $text-color;
+      }
+    }
+  }
 }
 
 

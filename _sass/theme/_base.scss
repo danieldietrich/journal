@@ -173,6 +173,16 @@ pre {
 
 
 /**
+ * SVG
+ */
+svg {
+  display: block;
+  margin: 0;
+}
+
+
+
+/**
  * Wrapper
  */
 .wrapper {
@@ -232,7 +242,3 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
-
-.bg-primary {
-  background-color: black;
- }
