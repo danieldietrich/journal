@@ -4,8 +4,8 @@
 .site-header {
   font-family: $headline-font-family;
   min-height: $spacing-unit * 1.865;
-  color: white;
-  background-color: gray;
+  color: $text-color;
+  border-bottom: 1px solid $grey-color-light;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -21,7 +21,7 @@
   float: left;
 
   &, &:active, &:visited {
-    color: white;
+    color: $text-color;
   }
 }
 
@@ -38,7 +38,7 @@
   }
 
   .page-link {
-    color: white;
+    color: $text-color;
     line-height: $base-line-height;
 
     // Gaps between nav items, but not on the last one
@@ -55,13 +55,13 @@
  */
 .site-footer {
   font-family: $headline-font-family;
-  padding: $spacing-unit 0 0 0;
+  margin: $spacing-unit 0 0 0;
+  border-top: 1px solid $grey-color-light;
 }
 
 .footer-heading {
   @include relative-font-size(1.125);
-  border-top: 1px solid $grey-color-light;
-  padding-top: $spacing-unit / 4;
+  padding-top: $spacing-unit / 2;
   margin-bottom: $spacing-unit / 2;
 }
 
@@ -147,14 +147,6 @@ footer {
   width: 16px;
   height: 16px;
   vertical-align: -2px;
-}
-
-.syncwave {
-  padding-bottom: 72px;
-  background-color: $grey-color;
-  .line {
-    background-color: white;
-  }
 }
 
 
@@ -424,10 +416,6 @@ ul.post-meta, ul.post-links {
 /**
  * Filter
  */
-.filter-container {
-  background-color: $grey-color-superlight;
-}
-
 .filter-notification {
   font-family: $title-font-family;
   font-size: $base-font-size;
