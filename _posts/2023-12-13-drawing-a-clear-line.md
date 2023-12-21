@@ -38,7 +38,7 @@ The second is _project completion_: "If I keep investing, I can finish the proje
 
 The third and single most powerful is _ego threat_: "If I don't keep investing, I'll look and feel like a fool. In response to ego threat, people invest more, hoping to turn the project into a success so they can prove to others&mdash;and themselves&mdash;that they were right all along.". In the context of Vavr, this is the community aspect. I don't want to put up a poor show. Spring Boot depends on Vavr and according to Maven Central, thousands of libraries depend on Spring Boot. Will I nuke the Java ecosystem when deprecating Vavr? For sure not but there is a negative aftertaste.
 
-(_My brother was an investment banker, his secret was: to realize losses._)
+(_My brother was a successful trader, his secret was: to realize losses._)
 
 I slowly but steadily moved away from Vavr years ago. But still, I did not find the right way to get it completely out of my head because I was not consistent enough to draw a clear line, yet, for example by stepping back as the owner of the repository.
 
