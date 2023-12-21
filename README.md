@@ -13,6 +13,10 @@ Run `./journal` for further information.
 3. Run `./journal publish _drafts/my-title.md` and follow the instructions
 4. Visit [danieldietrich.dev](https://danieldietrich.dev)
 
+## Prerequisites
+
+[Install latest Ruby](https://luther.io/articles/ruby-on-mac)
+
 ## Credits
 
 * The theme is completely handcrafted, I used an old [Minima](https://github.com/jekyll/minima/tree/38a84a949f9753c4542e25f422935f59b4913053) version as blueprint/starting point.
