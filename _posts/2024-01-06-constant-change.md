@@ -36,12 +36,12 @@ These thoughts are omnipresent for me but hard to capture as a whole and hard to
 
 [^reality]: Our small mind and the few antennas we have are not (and will never be) able to capture the whole picture called "reality."
 
-[^infinity]: We think that energy cannot be created or destroyed, only transformed. This would imply that there is no beginning nor end; all is infinite. If there is something like a big bang, an explosion of energy, it will happen an infinite amount of times and always has happened.
+[^infinity]: We think that energy cannot be created or destroyed, only transformed. This would imply that there is no beginning nor end; all is infinite. If there is something like a [big bang](https://en.wikipedia.org/wiki/Big_Bang), an explosion of energy, it will happen an infinite amount of times and always has happened.
 
 [^body-and-mind]: Our system is composed of two parts, the physical body and the non-physical mind. The blueprint of our body is encoded in a DNA double helix, consisting of sequences of base pairs formed by two nucleotides.
 
-[^koan]: A koan is a paradoxical anecdote or riddle used in Zen Buddhism to demonstrate the inadequacy of logical reasoning and to provoke the "great doubt," with the goal to reach enlightenment.
+[^koan]: A [koan](https://en.wikipedia.org/wiki/Koan) is a paradoxical anecdote or riddle used in Zen Buddhism to demonstrate the inadequacy of logical reasoning and to provoke the "great doubt," with the goal to reach enlightenment.
 
-[^reciprocity]: By virtue of the social rule of reciprocity, people feel obligated to provide benefits to those who have provided benefits to them.
+[^reciprocity]: By virtue of the social [rule of reciprocity](https://en.wikipedia.org/wiki/Reciprocity_(social_and_political_philosophy)), people feel obligated to provide benefits to those who have provided benefits to them.
 
 [^no-advice]: We are all here to make the same experiences but in different ways&mdash;everyone has a different path, so we can't give advice to others.
