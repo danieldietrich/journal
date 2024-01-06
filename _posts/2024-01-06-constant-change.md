@@ -40,7 +40,7 @@ These thoughts are omnipresent for me but hard to capture as a whole and hard to
 
 [^body-and-mind]: Our system is composed of two parts, the physical body and the non-physical mind. The blueprint of our body is encoded in a DNA double helix, consisting of sequences of base pairs formed by two nucleotides.
 
-[^koan]: A [koan](https://en.wikipedia.org/wiki/Koan) is a paradoxical anecdote or riddle used in Zen Buddhism to demonstrate the inadequacy of logical reasoning and to provoke the "great doubt," with the goal to reach enlightenment.
+[^koan]: A [koan](https://en.wikipedia.org/wiki/Koan) is a paradoxical anecdote or riddle used in Zen Buddhism to demonstrate the inadequacy of logical reasoning and to provoke the "great doubt", with the goal to reach enlightenment.
 
 [^reciprocity]: By virtue of the social [rule of reciprocity](https://en.wikipedia.org/wiki/Reciprocity_(social_and_political_philosophy)), people feel obligated to provide benefits to those who have provided benefits to them.
 
