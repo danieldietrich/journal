@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Foolish Inconsistency"
+title: "Foolish Consistency"
 tags: Dev Patterns Quotes
 ---
 
