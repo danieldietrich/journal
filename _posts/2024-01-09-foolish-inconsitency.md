@@ -6,7 +6,7 @@ tags: Dev Patterns Quotes
 
 The [quote][quote] "A foolish consistency is the hobgoblin of little minds" is attributed to Ralph Waldo Emerson, an American essayist and poet. He wrote it in his 1841 essay “Self-Reliance”, where he argued for the importance of individualism and independent thinking[^1]. The quote suggests that blindly following a fixed set of rules or beliefs, without considering new ideas or changing circumstances, is a sign of a narrow-minded person. Emerson believed that a great soul should be flexible and adaptable, and not afraid of being misunderstood by others.
 
-This quote is applied to a wide [field of topics][field-of-topics], such as politics, religion, and philosophy. Let's apply it to the field of software engineering, here a a few examples:
+This quote is applied to a wide [field of topics][field-of-topics], such as politics, religion, and philosophy. Let's apply it to the field of software engineering, here are a few examples:
 
 **Overuse of Microservices:** Splitting a system into too many microservices without a justifiable reason, resulting in a complex web of interdependencies, operational overhead, and difficulties in managing the distributed system.
 
