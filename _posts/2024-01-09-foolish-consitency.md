@@ -8,15 +8,15 @@ The [quote][quote] "A foolish consistency is the hobgoblin of little minds" is a
 
 This quote is applied to a wide [field of topics][field-of-topics], such as politics, religion, and philosophy. Let's apply it to the field of software engineering, here are a few examples:
 
-**Overuse of Microservices:** Splitting a system into too many microservices without a justifiable reason, resulting in a complex web of interdependencies, operational overhead, and difficulties in managing the distributed system.
+Overuse of Microservices: Splitting a system into too many microservices without a justifiable reason, resulting in a complex web of interdependencies, operational overhead, and difficulties in managing the distributed system.
 
-**Golden Hammer (or Law of the Instrument):** Using a favorite technology or tool for every problem, even when it is not the best suited for the task at hand, akin to the saying "if all you have is a hammer, everything looks like a nail."
+Golden Hammer (or Law of the Instrument): Using a favorite technology or tool for every problem, even when it is not the best suited for the task at hand, akin to the saying "if all you have is a hammer, everything looks like a nail."
 
-**Framework Overuse:** Applying a heavy-weight framework to every project, regardless of scale, which can introduce unnecessary complexity to smaller projects that don't need the full breadth of the framework's features.
+Framework Overuse: Applying a heavy-weight framework to every project, regardless of scale, which can introduce unnecessary complexity to smaller projects that don't need the full breadth of the framework's features.
 
-**Strict TDD (Test-Driven Development) Adherence:** Following TDD practices to the letter, writing unit tests for every single function without considering the value and cost of each test, which can lead to an excessive focus on coverage over meaningful tests.
+Strict TDD (Test-Driven Development) Adherence: Following TDD practices to the letter, writing unit tests for every single function without considering the value and cost of each test, which can lead to an excessive focus on coverage over meaningful tests.
 
-**Blindly Adhering to Style Guides:** Enforcing style guides without considering context or the reason behind the rules can lead to ignoring cases where deviation may be more readable or pragmatic.
+Blindly Adhering to Style Guides: Enforcing style guides without considering context or the reason behind the rules can lead to ignoring cases where deviation may be more readable or pragmatic.
 
 [^1]: See also the article [Wikipedia: Emerson and Wilde on consistency][wiki]
 
