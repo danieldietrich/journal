@@ -22,43 +22,51 @@ permalink: /404.html
     line-height: 1;
     letter-spacing: -1px;
   }
-  .flip {
-    position: relative;
-  }
-  .flip span {
-    position: relative;
-    display: inline-block;
+  h2 {
+    font-size: 2em;
     text-transform: uppercase;
-    animation: flip 8s infinite;
+  }
+  .flip {
+    display: inline-block;
+    opacity: 0;
+    transform: rotateY(180deg);
+    animation: flip 2s forwards;
     animation-delay: calc(.2s * var(--i))
   }
   @keyframes flip {
-    0%,80% {
-      transform: rotateY(360deg)
+    0% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateY(0deg);
+      opacity: 1;
     }
   }
 </style>
 
 <div class="container">
   <div class="content">
-    <h1>404</h1>
+    <h1>
+      <span class="flip" style="--i:1">4</span>
+      <span class="flip" style="--i:2">0</span>
+      <span class="flip" style="--i:3">4</span>
+    </h1>
     <h2>
-      <div class="flip">
-        <span style="--i:1">P</span>
-        <span style="--i:2">a</span>
-        <span style="--i:3">g</span>
-        <span style="--i:4">e</span>
-        &nbsp;
-        <span style="--i:5">N</span>
-        <span style="--i:6">o</span>
-        <span style="--i:7">t</span>
-        &nbsp;
-        <span style="--i:8">F</span>
-        <span style="--i:9">o</span>
-        <span style="--i:10">u</span>
-        <span style="--i:11">n</span>
-        <span style="--i:12">d</span>
-      </div>
+      <span class="flip" style="--i:4">P</span>
+      <span class="flip" style="--i:5">a</span>
+      <span class="flip" style="--i:6">g</span>
+      <span class="flip" style="--i:7">e</span>
+      &nbsp;
+      <span class="flip" style="--i:8">N</span>
+      <span class="flip" style="--i:9">o</span>
+      <span class="flip" style="--i:10">t</span>
+      &nbsp;
+      <span class="flip" style="--i:11">F</span>
+      <span class="flip" style="--i:12">o</span>
+      <span class="flip" style="--i:13">u</span>
+      <span class="flip" style="--i:14">n</span>
+      <span class="flip" style="--i:15">d</span>
     </h2>
   </div>
 </div>
