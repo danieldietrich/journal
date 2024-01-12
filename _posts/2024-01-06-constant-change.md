@@ -2,6 +2,7 @@
 layout: post
 title: "Constant Change"
 tags: Life Philosophy Spirituality
+redirect_from: /constant-change/
 ---
 
 Heraclitus, an Ancient Greek philosopher, observed: “The only constant in life is change.” Our environment is in constant flux. Nothing stays; everything passes. Personally, I observe that our mind seems to be interested in stability and consistency, so it makes sense that we need to find a balance between the two and adapt to change.

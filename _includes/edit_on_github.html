@@ -1,10 +1,4 @@
-{% if post %}
-  {% assign post_path = post.path %}
-{% else %}
-  {% assign post_path = page.path %}
-{% endif %}
-{% assign github_link = site.github_repo | append: '/edit/main/' | append: post_path %}
-
+{% assign github_link = site.github_repo | append: '/edit/main/' | append: page.path %}
 <a href="{{ github_link }}" target="_blank" rel="noopener noreferrer">
   Edit on GitHub
 </a>

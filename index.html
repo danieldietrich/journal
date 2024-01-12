@@ -1,48 +1,17 @@
 ---
-layout: base
 ---
-
-{% content_for head %}
-  <script src="/assets/js/filter-posts.js"></script>
-{% endcontent_for %}
-
-{% content_for top %}
-  <div>
-    <div class="wrapper">
-      <div class="filter-notification" style="display: none;">
-        <div class="filter-container">
-          <span>Filtered by: <span class="filter-tag"></span></span>
-          <button class="remove-filter">
-            <svg xmlns="http://www.w3.org/2000/svg" class="remove-icon" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M18 6l-12 12" />
-              <path d="M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-{% endcontent_for %}
-
-{%- if site.posts.size > 0 -%}
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-      <li class="{{ post.tags | join: ' ' | downcase }}" hidden>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-          <div class="small">
-            {%- include post-meta.html -%}
-          </div>
-        </h3>
-        {%- if site.show_excerpts -%}
-          <div class="post-excerpt" onclick="window.location.href='{{ post.url | relative_url }}';">
-            {{ post.excerpt }}
-          </div>
-        {%- endif -%}
-      </li>
-    {%- endfor -%}
-  </ul>
-{%- endif -%}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ site.url }}/blog/">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{{ site.url }}/blog/">
+    <title>Redirecting&hellip;</title>
+    <script>location="{{ site.url }}/blog/"</script>
+  </head>
+  <body>
+    <h1>Redirecting&hellip;</h1>
+    <a href="{{ site.url }}/blog/">Click here if you are not redirected.</a>
+  </body>
+</html>

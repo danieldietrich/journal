@@ -2,6 +2,7 @@
 layout: post
 title: "Good Morning!"
 tags: Life
+redirect_from: /good-morning/
 ---
 
 Welcome to my first post on "Daniel's Journal". The domain [danieldietrich.dev][danieldietrich.dev] has been there for a while and it was my wish to create a personal blog. In fact that wish has been there for several years, so what happened?

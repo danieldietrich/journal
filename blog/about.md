@@ -1,11 +1,11 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: "About"
+permalink: /blog/about/
 ---
 
 <figure>
-  <img src="/assets/img/daniel.webp" width="100%">
+  <img src="{{ "/assets/img/daniel.webp" | relative_url }}" width="100%">
   <figcaption>Summer 2023, Kiel/Germany</figcaption>
 </figure>
 

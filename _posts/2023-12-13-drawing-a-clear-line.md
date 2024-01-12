@@ -2,6 +2,7 @@
 layout: post
 title: "Drawing a Clear Line"
 tags: Community Life Goals OpenSource Vavr
+redirect_from: /drawing-a-clear-line/
 ---
 
 Recently, I felt the urge to create more space for creativity. The last time that happened a decade ago and automagically that space was filled and something new emerged&mdash;_Javaslang_[^1], better known as _Vavr_ today. And boy, that was a ride, I could tell tales!

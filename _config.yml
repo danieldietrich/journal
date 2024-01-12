@@ -4,7 +4,6 @@ author: Daniel Dietrich
 email: cafebab3@gmail.com
 description: >-
   Data for my future avatar.
-baseurl: "" # the subpath of the site, e.g. /blog
 url: "https://danieldietrich.dev"
 github_repo: "https://github.com/danieldietrich/journal"
 
@@ -17,7 +16,7 @@ github_username: danieldietrich
 linkedin_username: daniel-dietrich-kiel
 
 # Permalinks
-permalink: /:title/
+permalink: /blog/:year/:month/:day/:title/
 
 # Set to true to show excerpts on the homepage
 show_excerpts: true
@@ -32,7 +31,7 @@ kramdown:
 
 # Header pages in order as they should show up
 header_pages:
-  - about.md
+  - blog/about.md
 
 # Minify output
 sass:
@@ -41,6 +40,7 @@ sass:
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
   - jekyll-seo-tag
 
 # Exclude from processing

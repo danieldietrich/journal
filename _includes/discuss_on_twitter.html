@@ -1,10 +1,3 @@
-{% if post %}
-  {% assign post_url = post.url %}
-{% else %}
-  {% assign post_url = page.url %}
-{% endif %}
-{% assign twitter_search = site.url | append: site.baseurl | append: post_url %}
-
-<a href="https://twitter.com/search?q={{ twitter_search | url_encode }}" target="_blank" rel="noopener noreferrer">
+<a href="https://twitter.com/search?q={{ site.url | append: page.url | url_encode }}" target="_blank" rel="noopener noreferrer">
   Discuss on &#120143;
 </a>

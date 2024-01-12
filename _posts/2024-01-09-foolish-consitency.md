@@ -2,6 +2,7 @@
 layout: post
 title: "Foolish Consistency"
 tags: Dev Patterns Quotes
+redirect_from: /foolish-consitency/
 ---
 
 The [quote][quote] "A foolish consistency is the hobgoblin of little minds" is attributed to Ralph Waldo Emerson, an American essayist and poet. He wrote it in his 1841 essay “Self-Reliance”, where he argued for the importance of individualism and independent thinking[^1]. The quote suggests that blindly following a fixed set of rules or beliefs, without considering new ideas or changing circumstances, is a sign of a narrow-minded person. Emerson believed that a great soul should be flexible and adaptable, and not afraid of being misunderstood by others.
