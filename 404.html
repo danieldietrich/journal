@@ -1,0 +1,64 @@
+---
+layout: base
+permalink: /404.html
+---
+
+<style type="text/css" media="screen">
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    min-height: 200px;
+  }
+  .content {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 10em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .flip {
+    position: relative;
+  }
+  .flip span {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    animation: flip 8s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg)
+    }
+  }
+</style>
+
+<div class="container">
+  <div class="content">
+    <h1>404</h1>
+    <h2>
+      <div class="flip">
+        <span style="--i:1">P</span>
+        <span style="--i:2">a</span>
+        <span style="--i:3">g</span>
+        <span style="--i:4">e</span>
+        &nbsp;
+        <span style="--i:5">N</span>
+        <span style="--i:6">o</span>
+        <span style="--i:7">t</span>
+        &nbsp;
+        <span style="--i:8">F</span>
+        <span style="--i:9">o</span>
+        <span style="--i:10">u</span>
+        <span style="--i:11">n</span>
+        <span style="--i:12">d</span>
+      </div>
+    </h2>
+  </div>
+</div>
