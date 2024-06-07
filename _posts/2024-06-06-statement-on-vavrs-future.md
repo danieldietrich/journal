@@ -3,6 +3,7 @@ layout: post
 title: "Statement on Vavr's Future"
 tags: Community OpenSource Vavr
 image: /assets/img/daniel.webp
+redirect_from: /blog/2024/06/07/statement-on-vavrs-future/
 ---
 
 Hi guys, as I mentioned in a [previous post](https://danieldietrich.dev/blog/2023/12/13/drawing-a-clear-line/), I have redirected my energy from maintaining the Vavr project towards other activities. It seems that many people are uncertain about the future of Vavr. Please allow me to clarify a few things.
