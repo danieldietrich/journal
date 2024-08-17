@@ -1,4 +1,6 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/danieldietrich/journal)
+
+[![Open in Gitpod](https://img.shields.io/badge/Open_in_Gitpod-gray?logo=gitpod)](https://gitpod.io/#https://github.com/danieldietrich/journal)
+[![Open in GitHub Codespace](https://img.shields.io/badge/Open_in_GitHub_Codespaces-black?logo=github)](https://codespaces.new/danieldietrich/journal)
 
 # Daniel's Journal
 
