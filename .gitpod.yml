@@ -8,15 +8,10 @@ tasks:
       source /home/gitpod/.bashrc
       ./journal install
       ./journal start
-  - name: Open Preview
-    command: |
-      gp ports await 4000
-      gp preview $(gp url 4000)/blog
 
 ports:
   - port: 4000
-    onOpen: ignore
-    visibility: private
+    onOpen: open-preview
 
 vscode:
     extensions:

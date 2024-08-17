@@ -2,7 +2,14 @@
   "name": "Journal",
   "image": "ruby:3",
   "forwardPorts": [4000],
-  "postCreateCommand": "./journal install && ./journal start",
+  "portsAttributes": {
+    "4000": {
+        "label": "Preview",
+        "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "./journal install",
+  "postStartCommand": "./journal start",
   "customizations": {
       "vscode": {
           "extensions": [
