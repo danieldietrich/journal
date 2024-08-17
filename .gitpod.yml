@@ -17,9 +17,7 @@ vscode:
     extensions:
         - bierner.markdown-preview-github-styles
         - DavidAnson.vscode-markdownlint
-        - eamodio.gitlens
         - EditorConfig.EditorConfig
-        - jock.svg
         - sissel.shopify-liquid
         - timonwong.shellcheck
         - usernamehw.errorlens
