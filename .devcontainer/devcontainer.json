@@ -1,5 +1,5 @@
 {
-  "name": "Journal",
+  "name": "Daniel's Journal",
   "image": "ruby:3",
   "forwardPorts": [4000],
   "portsAttributes": {

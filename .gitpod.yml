@@ -1,5 +1,5 @@
 tasks:
-  - name: Journal
+  - name: Daniel's Journal
     command: |
       cat >>/home/gitpod/.bashrc <<EOF
       export GEM_HOME=/workspace/.rvm
