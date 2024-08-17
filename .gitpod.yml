@@ -6,13 +6,16 @@ tasks:
       export GEM_PATH=\$GEM_HOME:\$GEM_PATH
       EOF
       source /home/gitpod/.bashrc
-
       ./journal install
       ./journal start
+  - name: Open Preview
+    command: |
+      gp ports await 4000
+      gp preview $(gp url 4000)/blog
 
 ports:
   - port: 4000
-    onOpen: open-browser
+    onOpen: ignore
     visibility: private
 
 vscode:
