@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Architecting llm-lib"
-tags: AI Development JS LLM
+tags: AI LLM LLM-LIB
 image: /assets/img/daniel.webp
 ---
 
