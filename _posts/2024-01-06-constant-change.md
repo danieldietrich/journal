@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Constant Change"
+title: "Constant change"
 tags: Life Philosophy Spirituality
 redirect_from: /constant-change/
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Passing the Vavr Torch"
+title: "Passing the Vavr torch"
 tags: Community OpenSource Vavr
 image: /assets/img/daniel.webp
 ---

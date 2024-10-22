@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Foolish Consistency"
+title: "Foolish consistency"
 tags: Dev Patterns Quotes
 redirect_from: /foolish-consitency/
 ---

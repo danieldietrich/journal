@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Good Morning!"
+title: "Good morning!"
 tags: Life
 redirect_from: /good-morning/
 ---

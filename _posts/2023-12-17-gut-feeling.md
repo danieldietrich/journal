@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gut Feeling"
+title: "Gut feeling"
 tags: Life Meditation Philosophy Spirituality
 redirect_from: /gut-feeling/
 ---

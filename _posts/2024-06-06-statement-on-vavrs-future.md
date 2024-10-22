@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Statement on Vavr's Future"
+title: "Statement on Vavr's future"
 tags: Community OpenSource Vavr
 image: /assets/img/daniel.webp
 redirect_from: /blog/2024/06/07/statement-on-vavrs-future/

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sponsored Work on Vavr"
+title: "Sponsored work on Vavr"
 tags: Community OpenSource Vavr
 image: /assets/img/daniel.webp
 ---

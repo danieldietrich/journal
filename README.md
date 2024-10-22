@@ -24,3 +24,7 @@ Run `./journal` for further information.
 * The theme is completely handcrafted, I used an old [Minima](https://github.com/jekyll/minima/tree/38a84a949f9753c4542e25f422935f59b4913053) version as blueprint/starting point.
 * The fonts are Amazon Ember and Bookerly by Amazon ([developer.amazon.com](https://developer.amazon.com/en-US/alexa/branding/echo-guidelines/identity-guidelines/typography)) and San Francisco Mono by Apple ([developer.apple.com](https://developer.apple.com/fonts/)).
 * The SVGs are taken from [Tabler Icons](https://tablericons.com/) and minified using [SVGOMG](https://svgomg.net/).
+
+## Style Guide
+
+* Titles are written in [sentence case](https://dictionary.cambridge.org/dictionary/english/sentence-case), a capitalization style in which only the first word of a sentence and proper nouns are capitalized, with the rest of the words in lowercase.

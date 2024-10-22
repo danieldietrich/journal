@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Drawing a Clear Line"
+title: "Drawing a clear line"
 tags: Community Life Goals OpenSource Vavr
 redirect_from: /drawing-a-clear-line/
 ---
