@@ -1,12 +1,17 @@
 
 [![Open in Gitpod](https://img.shields.io/badge/Open_in_Gitpod-gray?logo=gitpod)](https://gitpod.io/#https://github.com/danieldietrich/journal)
-[![Open in GitHub Codespace](https://img.shields.io/badge/Open_in_GitHub_Codespaces-black?logo=github)](https://codespaces.new/danieldietrich/journal)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open_in_GitHub_Codespaces-black?logo=github)](https://codespaces.new/danieldietrich/journal)
 
 # Daniel's Journal
 
 This is the source code of my personal website [danieldietrich.dev](https://danieldietrich.dev). The website is built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
 
-Run `./journal` for further information.
+## Prerequisites
+
+* [Docker](https://www.docker.com/products/docker-desktop/)
+* [VS Code](https://code.visualstudio.com) & the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
+
+Clone the git repo [danieldietrich/journal](https://github.com/danieldietrich/journal) and open it in [Gitpod](https://gitpod.io/#https://github.com/danieldietrich/journal), [GitHub Codespaces](https://codespaces.new/danieldietrich/journal) or locally in [VS Code](https://code.visualstudio.com/docs/devcontainers/containers).
 
 ## Writing blog posts
 
@@ -15,9 +20,7 @@ Run `./journal` for further information.
 3. Run `./journal publish _drafts/my-title.md` and follow the instructions
 4. Visit [danieldietrich.dev](https://danieldietrich.dev)
 
-## Prerequisites
-
-[Install latest Ruby](https://luther.io/articles/ruby-on-mac)
+Run `./journal` for further information.
 
 ## Credits
 
