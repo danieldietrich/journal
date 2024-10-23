@@ -5,41 +5,38 @@ tags: AI ChatGPT ClaudeAI ffmpeg m3u8
 image: /assets/img/daniel.webp
 ---
 
-My passion for improving developer experience led me to show you how to use an AI assistant for generating a Bash script that can download protected video streams.
+Driven by my passion for enhancing the developer experience, I am here to guide you through using an AI assistant to craft a Bash script capable of downloading protected video streams. I favor simplicity and prefer to avoid installing a unique app for every task. As a developer, maintaining control over my tools, automating repetitive tasks, and minimizing dependencies to ensure a clean, secure system are my top priorities.
 
-I like to keep things simple, and I especially don't want to install a dedicated app for every single task. As a developer, I like to have control over my tools and automate repetitive tasks. Especially I want to reduce my dependencies and keep my system clean and secure.
+In this guide, I will demonstrate how to utilize AI (specifically, ClaudeAI) to create a Bash script that downloads videos protected by obfuscating the video stream through an m3u8[^1] playlist. While such streams aren't directly downloadable, they can be accessed using tools like [ffmpeg][ffmpeg][^2].
 
-Here, I want to show you how to use AI (in this case, ClaudeAI) to generate a Bash script that can download videos that are protected by obfuscating the video stream using a m3u8[^1] playlist. Such a stream can't be downloaded directly, but you can use a tool like [ffmpeg][ffmpeg][^2].
-
-It took me approximately 10 minutes to generate and test the video downloader script using AI assistants and apply it to a sample video stream. I opened [ClaudeAI][ClaudeAI] and asked the following question:
+With just about 10 minutes spent, I developed and tested a video downloader script using AI assistants, efficiently applying it to a sample video stream. I began with [ClaudeAI][ClaudeAI], posing this query:
 
 <tt>
-Please write a Bash script that downloads a video given a link that points to a m3u8 file. The m3u8 file may contain links to video files or parts or even to other m3u8 files that contain similar information. The output should be one file that is the result of a video stream. Please make use of the ffmpeg library if possible.
+Please write a Bash script that downloads a video given a link pointing to an m3u8 file. The m3u8 file may contain
+links to video files, segments, or nested m3u8 files. The output should consolidate into a single video stream file. Utilize the ffmpeg library if possible.
 </tt>
 
-The generated script worked out of the box for a m3u8 file that contained links to video stream parts. The script was a bit verbose by printing each stream part to the console, so I asked ClaudeAI to show the progress instead. I switched to [ChatGPT][ChatGPT] because my free ClaudeAI credits were used up.
+The generated script ran perfectly for an m3u8 file with links to video stream parts. It was quite verbose, printing each stream part to the console, so I asked ClaudeAI to adjust it to show progress instead. As my free ClaudeAI credits ran out, I switched to [ChatGPT][ChatGPT].
 
 <tt>
-I want to change the console/terminal output of the following video stream downloader the way that the progress is shown with a overall percentage number. Ideally, the overall content length is known apriori, otherwise a progress indicator should be shown by using a spinning ASCII character in a fixed position.<br>
+Modify the console/terminal output of the following video stream downloader to display progress as a percentage. Ideally, the total content length should be known in advance, otherwise, a spinning ASCII progress indicator should be used.<br>
 <br>
 (script omitted)
 </tt>
 
-The modified script worked as expected, until the second m3u8 file was encountered. A proper error message was shown, and I asked ChatGPT to handle this case as well.
+The script functioned as expected until it encountered the second m3u8 file. An error message appeared, prompting me to ask ChatGPT to resolve this issue.
 
 <tt>
-I think getting the overall content length works, the percentage is shown. However, I encountered the following error when the next part was loaded, and the script ended:<br>
+The percentage display works, but on loading the next part, this error appears, and the script stops:<br>
 <br>
 line 95: (00 * 3600) + (02 * 60) + 08: value too great for base (error token is "08")
 </tt>
 
-ChatGPT fixed the issue by prefixing each time component inside the arithmetic evaluation with `10#` to ensure that Bash treats them as base-10 numbers, effectively removing any leading zero interpretation as octal numbers.
+ChatGPT resolved the issue by prefixing each time component with `10#` within the arithmetic evaluation, ensuring Bash treats them as base-10 numbers, mitigating any octal misinterpretation.
 
-Finally, the script worked as expected and had a nice progress indicator. I was able to download video streams and watch them offline without any additional software (except ffmpeg). I took the time to refine the script by using [Shellcheck][Shellcheck] and manually adding some enhancements. A further improvement could be to obtain the m3u8 file automatically by using another script that extracts the m3u8 file URL from the DOM of a media library URL.
+Finally, the script ran smoothly, complete with a satisfying progress indicator. I could download video streams and view them offline without requiring additional software, aside from ffmpeg. I took additional time to refine the script using [Shellcheck][Shellcheck] and added some manual improvements. A potential enhancement could be to automatically obtain the m3u8 URL using a separate script that extracts it from a media library URL's DOM.
 
-The complete script `video-downloader.sh` is shown below[^4].
-
-Disclaimer: The script is generated by AI and may contain errors. Use it at your own risk. The script is intended solely for downloading video streams that are freely available and not protected by copyright. Users are responsible for ensuring compliance with applicable copyright laws and must obtain proper authorization or rights before using this code to download any copyrighted material.
+Below is the complete `video-downloader.sh` script[^4].
 
 ```bash
 #!/bin/bash
@@ -50,140 +47,140 @@ Disclaimer: The script is generated by AI and may contain errors. Use it at your
 
 # Function to display usage instructions
 usage() {
-    echo "Usage: $0 [-y] <m3u8_url> <output_filename>"
-    echo "  -y   Overwrite existing output files without prompt."
-    echo "Example: $0 \"https://example.com/stream.m3u8\" \"output.mp4\""
-    exit 1
+  echo "Usage: $0 [-y] <m3u8_url> <output_filename>"
+  echo "  -y   Overwrite existing output files without prompt."
+  echo "Example: $0 \"https://example.com/stream.m3u8\" \"output.mp4\""
+  exit 1
 }
 
 # Function to check if required commands are available
 check_requirements() {
-    local missing_requirements=0
-    if ! command -v ffmpeg >/dev/null 2>&1; then
-        echo "Error: ffmpeg is not installed. Please install it first."
-        missing_requirements=1
-    fi
-    if ! command -v ffprobe >/dev/null 2>&1; then
-        echo "Error: ffprobe is not installed. Please install it first."
-        missing_requirements=1
-    fi
-    if ! command -v curl >/dev/null 2>&1; then
-        echo "Error: curl is not installed. Please install it first."
-        missing_requirements=1
-    fi
-    if [ $missing_requirements -eq 1 ]; then
-        exit 1
-    fi
+  local missing_requirements=0
+  if ! command -v ffmpeg >/dev/null 2>&1; then
+    echo "Error: ffmpeg is not installed. Please install it first."
+    missing_requirements=1
+  fi
+  if ! command -v ffprobe >/dev/null 2>&1; then
+    echo "Error: ffprobe is not installed. Please install it first."
+    missing_requirements=1
+  fi
+  if ! command -v curl >/dev/null 2>&1; then
+    echo "Error: curl is not installed. Please install it first."
+    missing_requirements=1
+  fi
+  if [ $missing_requirements -eq 1 ]; then
+    exit 1
+  fi
 }
 
 # Function to validate URL
 validate_url() {
-    local url=$1
-    if ! curl --output /dev/null --silent --head --fail "$url"; then
-        echo "Error: Invalid URL or resource not accessible: $url"
-        exit 1
-    fi
+  local url=$1
+  if ! curl --output /dev/null --silent --head --fail "$url"; then
+    echo "Error: Invalid URL or resource not accessible: $url"
+    exit 1
+  fi
 }
 
 # Function to determine total content length using ffprobe
 get_content_length() {
-    local url=$1
-    local duration
-    duration=$(ffprobe -i "$url" -show_entries format=duration -v quiet -of csv="p=0")
-    echo "$duration"
+  local url=$1
+  local duration
+  duration=$(ffprobe -i "$url" -show_entries format=duration -v quiet -of csv="p=0")
+  echo "$duration"
 }
 
 # Function to get format name and long name using ffprobe
 get_format() {
-    local url=$1
-    local format_info
-    format_info=$(ffprobe -i "$url" -show_entries format=format_name,format_long_name -v quiet -of csv="p=0")
+  local url=$1
+  local format_info
+  format_info=$(ffprobe -i "$url" -show_entries format=format_name,format_long_name -v quiet -of csv="p=0")
 
-    # Transform the output into "<name> (<long_name>)"
-    echo "$format_info" | awk -F, '{print $1 " (" $2 ")"}'
+  # Transform the output into "<name> (<long_name>)"
+  echo "$format_info" | awk -F, '{print $1 " (" $2 ")"}'
 }
 
 get_video_resolution() {
-    local file=$1
-    local resolution
-    resolution=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$file")
-    echo "$resolution"
+  local file=$1
+  local resolution
+  resolution=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$file")
+  echo "$resolution"
 }
 
 # Function to display spinner
 spinner() {
-    local pid=$1
-    local delay=0.1
-    local spinstr="|/-\\"
-    while ps a | awk '{print $1}' | grep -q "$pid"; do
-        local temp=${spinstr#?}
-        printf " [%c] " "$spinstr"
-        spinstr=$temp${spinstr%"$temp"}
-        sleep $delay
-        printf "\b\b\b\b\b\b"
-    done
+  local pid=$1
+  local delay=0.1
+  local spinstr="|/-\\"
+  while ps a | awk '{print $1}' | grep -q "$pid"; do
+    local temp=${spinstr#?}
+    printf " [%c] " "$spinstr"
+    spinstr=$temp${spinstr%"$temp"}
+    sleep $delay
+    printf "\b\b\b\b\b\b"
+  done
 }
 
 # Function to download and process the m3u8 stream
 download_stream() {
-    local url=$1
-    local output=$2
-    echo "Starting download of: $url"
-    echo "Format: $(get_format "$url")"
-    echo "Output will be saved as: $output"
+  local url=$1
+  local output=$2
+  echo "Starting download of: $url"
+  echo "Format: $(get_format "$url")"
+  echo "Output will be saved as: $output"
 
-    # Get the total duration of the stream
-    local total_duration
-    total_duration=$(get_content_length "$url")
-    total_duration=${total_duration%.*}  # Remove any decimal part
-    if [[ ! "$total_duration" =~ ^[0-9]+$ ]]; then
-        echo "Content length not determinable."
-        ffmpeg -i "$url" \
-            -c copy \
-            -bsf:a aac_adtstoasc \
-            -movflags +faststart \
-            -y \
-            "$output" > /dev/null 2>&1 &
-        spinner $!
-    else
-        # Convert total duration to HH:MM:SS format
-        printf -v formatted_duration '%02d:%02d:%02d' "$(echo "$total_duration/3600" | bc)" "$(echo "$total_duration%3600/60" | bc)" "$(echo "$total_duration%60" | bc)"
-        echo "Content length determined: $formatted_duration"
-        ffmpeg -i "$url" \
-            -c copy \
-            -bsf:a aac_adtstoasc \
-            -movflags +faststart \
-            -y \
-            "$output" 2>&1 | while read -r line; do
-            if [[ "$line" =~ time=([0-9]+):([0-9]+):([0-9]+) ]]; then
-                hours=${BASH_REMATCH[1]}
-                minutes=${BASH_REMATCH[2]}
-                seconds=${BASH_REMATCH[3]}
-                # Remove leading zeros by using arithmetic evaluation
-                current_duration=$((10#$hours * 3600 + 10#$minutes * 60 + 10#$seconds))
-                if [ "$total_duration" -ne 0 ]; then
-                    progress=$(awk "BEGIN {printf \"%.2f\", ($current_duration / $total_duration) * 100}")
-                    echo -ne "Progress: $progress% \r"
-                fi
-            fi
-        done
-    fi
+  # Get the total duration of the stream
+  local total_duration
+  total_duration=$(get_content_length "$url")
+  total_duration=${total_duration%.*} # Remove any decimal part
+  if [[ ! "$total_duration" =~ ^[0-9]+$ ]]; then
+    echo "Content length not determinable."
+    ffmpeg -i "$url" \
+      -c copy \
+      -bsf:a aac_adtstoasc \
+      -movflags +faststart \
+      -y \
+      "$output" >/dev/null 2>&1 &
+    spinner $!
+  else
+    # Convert total duration to HH:MM:SS format
+    printf -v formatted_duration '%02d:%02d:%02d' "$(echo "$total_duration/3600" | bc)" "$(echo "$total_duration%3600/60" | bc)" "$(echo "$total_duration%60" | bc)"
+    echo "Content length determined: $formatted_duration"
+    ffmpeg -i "$url" \
+      -c copy \
+      -bsf:a aac_adtstoasc \
+      -movflags +faststart \
+      -y \
+      "$output" 2>&1 | while read -r line; do
+      if [[ "$line" =~ time=([0-9]+):([0-9]+):([0-9]+) ]]; then
+        hours=${BASH_REMATCH[1]}
+        minutes=${BASH_REMATCH[2]}
+        seconds=${BASH_REMATCH[3]}
+        # Remove leading zeros by using arithmetic evaluation
+        current_duration=$((10#$hours * 3600 + 10#$minutes * 60 + 10#$seconds))
+        if [ "$total_duration" -ne 0 ]; then
+          progress=$(awk "BEGIN {printf \"%.2f\", ($current_duration / $total_duration) * 100}")
+          echo -ne "Progress: $progress% \r"
+        fi
+      fi
+    done
+  fi
 
-    if [ "${PIPESTATUS[0]}" -eq 0 ]; then
-        echo "Download completed successfully!"
-        echo "File saved in $(get_video_resolution "$output") as: $output"
-    else
-        echo "Error: Download failed!"
-        rm -f "$output"
-        exit 1
-    fi
+  if [ "${PIPESTATUS[0]}" -eq 0 ]; then
+    echo "Download completed successfully!"
+    echo "File saved in $(get_video_resolution "$output") as: $output"
+  else
+    echo "Error: Download failed!"
+    rm -f "$output"
+    exit 1
+  fi
 }
 
 # Main script execution starts here
 
 # Check if correct number of arguments provided
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
-    usage
+  usage
 fi
 
 # Initialize variables
@@ -191,16 +188,16 @@ FORCE_OVERWRITE=0
 
 # Parse command line options
 while getopts ":y" opt; do
-    case ${opt} in
-        y )
-            FORCE_OVERWRITE=1
-            ;;
-        \? )
-            usage
-            ;;
-    esac
+  case ${opt} in
+  y)
+    FORCE_OVERWRITE=1
+    ;;
+  \?)
+    usage
+    ;;
+  esac
 done
-shift $((OPTIND -1))
+shift $((OPTIND - 1))
 
 # Get command line arguments
 M3U8_URL=$1
@@ -208,12 +205,12 @@ OUTPUT_FILE=$2
 
 # Check if output file already exists
 if [ "$FORCE_OVERWRITE" -eq 0 ] && [ -f "$OUTPUT_FILE" ]; then
-    read -p "File $OUTPUT_FILE already exists. Overwrite? (y/n) " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        echo "Operation cancelled."
-        exit 1
-    fi
+  read -p "File $OUTPUT_FILE already exists. Overwrite? (y/n) " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Operation cancelled."
+    exit 1
+  fi
 fi
 
 # Check for required commands
@@ -226,19 +223,19 @@ validate_url "$M3U8_URL"
 download_stream "$M3U8_URL" "$OUTPUT_FILE"
 ```
 
-In fact, writing this script was just a kata exercise for me. By continuously using AI to generate and improve code, I learn a lot about my own development flow and how to improve it. Many ideas emerge from these exercises. Let's see where this journey will take me next.
+Indeed, writing this script served as a kata exercise for me. Regularly utilizing AI to generate and refine code enhances my development workflow and sparks various new ideas. I'm eager to see where this journey leads next.
 
-I hope this post was helpful and you enjoyed reading it. If you have any questions or feedback, please follow the links below to discuss them with me.
+I hope this post was beneficial, and you found it enjoyable. For any questions or feedback, feel free to follow the links below to engage with me.
 
-Thanks for reading and have a great time!<br>
+Thanks for reading, and have a splendid day!<br>
 Daniel
 
-P.S. My next journal post might be about the beautiful country of Portugal; I recently watched a German [documentary][documentary][^3] about it on the ZDF media library.
+P.S. Stay tuned for my next journal post, possibly about the stunning country of Portugal, inspired by a recent German [documentary][documentary][^3] I watched on the ZDF media library.
 
-[^1]: m3u8 is a multimedia playlist file format that is used to serve audio and video content over the internet. The m3u8 URL can be obtained by playing the video in the web browser, opening the developer tools by pressing ⌥ ⌘ I on macOS, selecting Network and filtering by m3u8.
-[^2]: [ffmpeg][ffmpeg] is a free and open-source project consisting of a large software suite of libraries and programs for handling video, audio, and other multimedia files and streams. It can be installed on macOS by using [Homebrew][Homebrew] `brew install ffmpeg` or on Ubuntu by using `sudo apt install ffmpeg`.
-[^3]: The video about Portugal will be available on the ZDF media library until 15.12.2025.
-[^4]: The script might need to be made executable by running `chmod +x video-downloader.sh` before it can be executed.
+[^1]: m3u8 is a multimedia playlist file format utilized for serving audio and video content online. You can obtain the m3u8 URL by playing the video in a web browser, opening developer tools with ⌥ ⌘ I on macOS, navigating to Network, and filtering for m3u8.
+[^2]: [ffmpeg][ffmpeg] is an open-source project offering a comprehensive suite of libraries and programs for handling video, audio, and other multimedia files and streams. Installable on macOS via [Homebrew][Homebrew] `brew install ffmpeg` or on Ubuntu with `sudo apt install ffmpeg`.
+[^3]: The documentary on Portugal is available on the ZDF media library until 15.12.2025.
+[^4]: The script may require execution permissions, which can be set using `chmod +x video-downloader.sh`.
 
 [ChatGPT]: https://chatgpt.com
 [ClaudeAI]: https://claudeai.com/
